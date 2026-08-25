@@ -87,15 +87,15 @@ https://SEU-USUARIO.github.io/grip/
 
 > 🚧 **Em andamento.** As instruções para instalação, configuração das dependências, execução do JSON Server e inicialização da aplicação serão adicionadas conforme o ambiente do projeto for configurado.
 
-## 📱 Telas da aplicação
-
-> 🚧 **Em andamento.** As telas da aplicação serão adicionadas conforme forem desenvolvidas e implementadas no projeto.
-
 ## 📌 Status do Projeto
 
 🚧 **Em desenvolvimento**
 
 > O projeto será desenvolvido progressivamente, com novas funcionalidades e melhorias sendo adicionadas conforme o andamento da implementação.
+
+## 📱 Telas da aplicação
+
+> 🚧 **Em andamento.** As telas da aplicação serão adicionadas conforme forem desenvolvidas e implementadas no projeto.
 
 ## 👨‍💻 Projeto
 
