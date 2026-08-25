@@ -1,4 +1,4 @@
-# 📄 Product Requirements Document (PRD) - GymTrack
+# 📄 Product Requirements Document (PRD) - GRIP
 
 ## 1. Visão Geral e Objetivo
 
