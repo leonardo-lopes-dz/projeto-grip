@@ -1,6 +1,6 @@
 # 🏋️ GRIP
 
-### **Autores:** Leonardo Lopes Dzevenka
+### **Autor:** Leonardo Lopes Dzevenka
 
 Este projeto tem como objetivo desenvolver progressivamente e de forma didática uma aplicação web voltada para o **registro e acompanhamento de treinos de musculação**.
 
