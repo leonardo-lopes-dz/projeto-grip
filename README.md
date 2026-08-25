@@ -95,7 +95,7 @@ https://SEU-USUARIO.github.io/grip/
 
 🚧 **Em desenvolvimento**
 
-O projeto será desenvolvido progressivamente, com novas funcionalidades e melhorias sendo adicionadas conforme o andamento da implementação.
+> O projeto será desenvolvido progressivamente, com novas funcionalidades e melhorias sendo adicionadas conforme o andamento da implementação.
 
 ## 👨‍💻 Projeto
 
