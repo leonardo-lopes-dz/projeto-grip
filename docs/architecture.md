@@ -2,16 +2,16 @@
 
 ## 1. Visão Geral e Objetivo
 
-O **GymTrack** é uma aplicação web didática voltada para o registro e acompanhamento de treinos de musculação.
+O **GRIP** é uma aplicação web didática voltada para o registro e acompanhamento de treinos de musculação.
 
 O sistema permite que o usuário cadastre exercícios, organize seus treinos e registre informações de desempenho, como número de séries, repetições e carga utilizada.
 
-**O grande diferencial (Regra de Negócio Principal):** O GymTrack utiliza o histórico dos exercícios para acompanhar a evolução do usuário e identificar **Recordes Pessoais (PRs)**. Sempre que uma nova carga superar a maior carga anteriormente registrada para determinado exercício, o sistema identifica a evolução como um novo PR.
+**O grande diferencial (Regra de Negócio Principal):** O GRIP utiliza o histórico dos exercícios para acompanhar a evolução do usuário e identificar **Recordes Pessoais (PRs)**. Sempre que uma nova carga superar a maior carga anteriormente registrada para determinado exercício, o sistema identifica a evolução como um novo PR.
 
 ## 2. Atores do Sistema
 
 * **Visitante:** Usuário que acessa a aplicação e deseja cadastrar e organizar seus treinos.
-* **Usuário:** Pessoa que utiliza o GymTrack para cadastrar exercícios, criar treinos e registrar seu desempenho.
+* **Usuário:** Pessoa que utiliza o GRIP para cadastrar exercícios, criar treinos e registrar seu desempenho.
 * **O Sistema:** Responsável por armazenar os dados, processar os registros e identificar novos recordes pessoais.
 
 ## 3. Histórias de Usuário e Escopo
@@ -20,7 +20,7 @@ Abaixo estão as funcionalidades principais do MVP (Minimum Viable Product), esc
 
 ### 🏋️ Épico 1: Exercícios
 
-* **US01 - Cadastro de Exercício:** Como um Usuário, quero preencher um formulário com os dados de um exercício (Nome, Grupo Muscular, Equipamento) para cadastrá-lo no GymTrack.
+* **US01 - Cadastro de Exercício:** Como um Usuário, quero preencher um formulário com os dados de um exercício (Nome, Grupo Muscular, Equipamento) para cadastrá-lo no GRIP.
 
   * *Critérios de Aceitação:* O nome e o grupo muscular são obrigatórios; os dados devem ser validados antes do cadastro.
 
