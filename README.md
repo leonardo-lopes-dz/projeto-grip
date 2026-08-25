@@ -85,33 +85,7 @@ https://SEU-USUARIO.github.io/grip/
 
 ## 🚀 Manual de execução
 
-* Clonar o repositório utilizando `git clone`.
-* Fazer checkout na branch utilizada para o desenvolvimento.
-* Abrir o projeto no editor Visual Studio Code (VS Code).
-* Abrir um terminal pelo VS Code ou qualquer terminal do Sistema Operacional apontando para o diretório raiz do projeto.
-* Instalar as dependências contidas no `package.json`.
-
-  * Comando: `npm i`
-* (Opcional) Instalar o JSON Server globalmente.
-
-  * Comando: `npm i -g json-server`
-  * A instalação global é opcional, pois o JSON Server pode estar cadastrado como dependência local no `package.json`.
-* Executar a API Fake (JSON Server).
-
-  * Caso exista um script configurado no `package.json`, utilizar o comando correspondente.
-  * Ou executar diretamente:
-
-```bash
-json-server --watch db.json
-```
-
-* O JSON Server será executado localmente, por padrão, em:
-
-```text
-http://localhost:3000
-```
-
-* Executar o projeto frontend utilizando o servidor de desenvolvimento configurado ou uma extensão como Live Server no VS Code.
+> 🚧 **Em andamento.** As instruções para instalação, configuração das dependências, execução do JSON Server e inicialização da aplicação serão adicionadas conforme o ambiente do projeto for configurado.
 
 ## 📱 Telas da aplicação
 
