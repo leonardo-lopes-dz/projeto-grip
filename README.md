@@ -1,4 +1,4 @@
-# GRIP
+# 🏋️ GRIP
 
 ### **Autores:** Leonardo Lopes Dzevenka
 
