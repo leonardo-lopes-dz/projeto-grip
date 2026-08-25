@@ -89,27 +89,7 @@ https://SEU-USUARIO.github.io/grip/
 
 ## 📱 Telas da aplicação
 
-As telas da aplicação serão apresentadas nesta seção conforme forem desenvolvidas.
-
-### 🏠 Dashboard
-
-> Tela principal com resumo dos treinos, exercícios e evolução do usuário.
-
-### 🏋️ Exercícios
-
-> Tela destinada ao cadastro e visualização dos exercícios.
-
-### 💪 Treinos
-
-> Tela destinada à criação dos treinos e associação dos exercícios.
-
-### 📊 Registros
-
-> Tela destinada ao registro e acompanhamento do desempenho nos exercícios.
-
-### 🏆 PRs
-
-> Área destinada à visualização dos Recordes Pessoais identificados pelo sistema.
+> 🚧 **Em andamento.** As telas da aplicação serão adicionadas conforme forem desenvolvidas e implementadas no projeto.
 
 ## 📌 Status do Projeto
 
