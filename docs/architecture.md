@@ -13,20 +13,20 @@ erDiagram
     EXERCICIO ||--o{ REGISTRO : "possui"
 
     TREINO {
-        int id PK "Gerado automaticamente"
+        integer id PK "Gerado automaticamente"
         string nome
         string descricao
     }
 
     EXERCICIO {
-        int id PK "Gerado automaticamente"
+        integer id PK "Gerado automaticamente"
         string nome
         string grupoMuscular
         string equipamento
     }
 
     TREINO_EXERCICIO {
-        int id PK
+        integer id PK
         string treinoId FK
         string exercicioId FK
     }
