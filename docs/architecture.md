@@ -13,26 +13,26 @@ erDiagram
     EXERCICIO ||--o{ REGISTRO : "possui"
 
     TREINO {
-        string id PK "Gerado automaticamente"
+        int id PK "Gerado automaticamente"
         string nome
         string descricao
     }
 
     EXERCICIO {
-        string id PK "Gerado automaticamente"
+        int id PK "Gerado automaticamente"
         string nome
         string grupoMuscular
         string equipamento
     }
 
     TREINO_EXERCICIO {
-        string id PK
+        int id PK
         string treinoId FK
         string exercicioId FK
     }
 
     REGISTRO {
-        string id PK
+        int id PK
         string exercicioId FK
         float carga
         integer repeticoes
