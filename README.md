@@ -2,11 +2,11 @@
 
 ### **Autor:** Leonardo Lopes Dzevenka
 
-Este projeto tem como objetivo desenvolver progressivamente e de forma didática uma aplicação web voltada para o **registro e acompanhamento de treinos de musculação**.
+Este projeto tem como objetivo desenvolver progressivamente e de forma didática uma aplicação web voltada para a **montagem e organização de treinos de musculação**.
 
-O **GRIP** permite cadastrar exercícios, criar treinos, associar exercícios às rotinas e registrar informações de desempenho, como carga, repetições e séries.
+O **GRIP** permite que o usuário consulte exercícios de acordo com o grupo muscular escolhido, selecione os exercícios desejados e monte treinos personalizados, definindo informações como séries e repetições.
 
-O diferencial da aplicação é o acompanhamento da evolução do usuário por meio do histórico dos exercícios, identificando automaticamente **Recordes Pessoais (PRs)** quando uma nova carga supera a maior carga anteriormente registrada para determinado exercício.
+O diferencial da aplicação é facilitar a **montagem de treinos a partir dos grupos musculares**, utilizando uma API Fake para consultar e disponibilizar os exercícios relacionados ao grupo selecionado.
 
 O frontend da aplicação é desenvolvido com **HTML, CSS e JavaScript**, utilizando um framework CSS para construção de layouts responsivos. O backend é simulado por uma **API Fake utilizando JSON Server**.
 
@@ -15,7 +15,7 @@ O frontend da aplicação é desenvolvido com **HTML, CSS e JavaScript**, utiliz
 Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
 * [📄 Product Requirements Document (PRD)](docs/prd.md) - Visão geral, atores, histórias de usuário, escopo e requisitos do sistema.
-* [🛠️ Especificação Técnica (Tech Spec)](docs/architecture.md) - Diagrama de banco de dados (DER), dicionário de dados, regras de negócio, estrutura do `db.json` e rotas da API.
+* [🛠️ Especificação Técnica (Tech Spec)](docs/spec.md) - Diagrama de banco de dados (DER), dicionário de dados, estrutura do `db.json` e rotas da API.
 
 ## 🎨 Design
 
@@ -24,7 +24,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 🌐 Site em Produção - GitHub Pages
 
-> Em desenvolvimento.
+> 🚧 **Em desenvolvimento.**
 
 <!-- Quando o projeto estiver publicado, substituir pelo endereço:
 https://SEU-USUARIO.github.io/grip/
@@ -58,6 +58,6 @@ https://SEU-USUARIO.github.io/grip/
 
 ## 👨‍💻 Projeto
 
-**GRIP — Sistema de Registro e Acompanhamento de Treinos**
+**GRIP — Sistema de Montagem e Organização de Treinos**
 
 Projeto desenvolvido para fins acadêmicos e didáticos.
