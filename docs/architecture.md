@@ -10,7 +10,6 @@ Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura
 erDiagram
     TREINO ||--o{ TREINO_EXERCICIO : "possui"
     EXERCICIO ||--o{ TREINO_EXERCICIO : "pertence"
-    EXERCICIO ||--o{ REGISTRO : "possui"
 
     TREINO {
         integer id PK "Gerado automaticamente"
@@ -27,17 +26,10 @@ erDiagram
 
     TREINO_EXERCICIO {
         integer id PK
-        string treinoId FK
-        string exercicioId FK
-    }
-
-    REGISTRO {
-        int id PK
-        string exercicioId FK
-        float carga
-        integer repeticoes
+        integer treinoId FK
+        integer exercicioId FK
         integer series
-        string data
+        integer repeticoes
     }
 ```
 
@@ -45,7 +37,7 @@ erDiagram
 
 Breve explicação das entidades principais:
 
-* **Exercícios:** Responsável por armazenar os exercícios cadastrados pelo usuário.
+* **Exercícios:** Responsável por armazenar os exercícios disponíveis no sistema.
 
   * `id`: Identificador único do exercício.
   * `nome`: Nome do exercício.
@@ -58,32 +50,28 @@ Breve explicação das entidades principais:
   * `nome`: Nome do treino.
   * `descricao`: Descrição do treino.
 
-* **Registros:** Armazena o desempenho do usuário durante os exercícios.
+* **Treino_Exercicio:** Responsável por relacionar os exercícios aos treinos e armazenar as configurações específicas de cada exercício dentro do treino.
 
-  * `id`: Identificador único do registro.
-  * `exercicioId`: Identificador do exercício realizado.
-  * `carga`: Peso utilizado no exercício.
-  * `repeticoes`: Número de repetições realizadas.
-  * `series`: Número de séries realizadas.
-  * `data`: Data em que o exercício foi realizado.
-
-* **Treino_Exercicio:** Responsável por relacionar exercícios aos treinos.
-
+  * `id`: Identificador único da relação.
   * `treinoId`: Identificador do treino.
   * `exercicioId`: Identificador do exercício.
+  * `series`: Quantidade de séries definidas para o exercício.
+  * `repeticoes`: Quantidade de repetições definidas para o exercício.
 
-**Regra de Negócio Crítica:** Ao registrar uma nova carga em um exercício, o sistema compara o valor com o maior registro anterior. Caso a nova carga seja maior, o sistema identifica o registro como um novo PR.
+**Regra de Negócio:** Um treino pode possuir vários exercícios e um exercício pode estar presente em vários treinos. As séries e repetições são definidas especificamente para cada exercício dentro de cada treino.
 
 ## 3. Rotas da API (JSON Server)
 
-A aplicação consome uma API local simulada pelo JSON Server. Abaixo os principais endpoints:
+A aplicação consome uma API local simulada pelo JSON Server. Abaixo estão os principais endpoints:
 
 * `GET /exercicios` - Retorna a lista de exercícios.
+* `GET /exercicios?grupoMuscular=Bíceps` - Retorna os exercícios de um determinado grupo muscular.
 * `POST /exercicios` - Cadastra um novo exercício.
 * `GET /treinos` - Retorna a lista de treinos.
+* `GET /treinos/1` - Retorna um treino específico.
 * `POST /treinos` - Cadastra um novo treino.
-* `GET /registros?exercicioId=1` - Retorna os registros de um exercício específico.
-* `POST /registros` - Cadastra um novo registro de desempenho.
+* `GET /treinoExercicios?treinoId=1` - Retorna os exercícios associados a um treino.
+* `POST /treinoExercicios` - Associa um exercício a um treino, incluindo séries e repetições.
 
 ## 4. Estrutura do Banco de Dados (`db.json`)
 
@@ -93,42 +81,39 @@ Esta é a representação em formato JSON do banco de dados simulado. Esta estru
 {
     "exercicios": [
         {
-            "id": "1",
+            "id": 1,
             "nome": "Supino reto",
             "grupoMuscular": "Peito",
             "equipamento": "Barra"
         },
         {
-            "id": "2",
+            "id": 2,
             "nome": "Rosca direta",
             "grupoMuscular": "Bíceps",
             "equipamento": "Barra"
+        },
+        {
+            "id": 3,
+            "nome": "Rosca martelo",
+            "grupoMuscular": "Bíceps",
+            "equipamento": "Halteres"
         }
     ],
     "treinos": [
         {
-            "id": "1",
+            "id": 1,
             "nome": "Treino A",
-            "descricao": "Peito e tríceps"
+            "descricao": "Peito e Tríceps"
         }
     ],
     "treinoExercicios": [
         {
-            "id": "1",
-            "treinoId": "1",
-            "exercicioId": "1"
-        }
-    ],
-    "registros": [
-        {
-            "id": "1",
-            "exercicioId": "1",
-            "carga": 80,
-            "repeticoes": 10,
+            "id": 1,
+            "treinoId": 1,
+            "exercicioId": 1,
             "series": 4,
-            "data": "2026-08-25"
+            "repeticoes": 10
         }
     ]
 }
 ```
-
