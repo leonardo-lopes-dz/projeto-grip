@@ -58,11 +58,11 @@ https://SEU-USUARIO.github.io/grip/
 
 <img width="1600" height="1280" alt="Página inicial do GRIP" src="https://github.com/user-attachments/assets/97e61c10-5e76-4892-afa7-2f1c64758324" />
 
-### 🏋️ Exercícios
+### 🛠️ Montar Treino
 
 <img width="1600" height="1280" alt="Página de exercícios do GRIP" src="https://github.com/user-attachments/assets/169960b2-75c6-4884-aa5b-c0c1e184becc" />
 
-### 🛠️ Montar Treino
+### 🏋️ Exercícios
 
 <img width="1600" height="1280" alt="Página de montagem de treino do GRIP" src="https://github.com/user-attachments/assets/2822a263-ed6e-42f4-ae51-af0f3ad69cb2" />
 
