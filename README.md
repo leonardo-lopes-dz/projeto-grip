@@ -15,7 +15,7 @@ O frontend da aplicação é desenvolvido com **HTML, CSS e JavaScript**, utiliz
 Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
 * [📄 Product Requirements Document (PRD)](docs/prd.md) - Visão geral, atores, histórias de usuário, escopo e requisitos do sistema.
-* [🛠️ Especificação Técnica (Tech Spec)](docs/spec.md) - Diagrama de banco de dados (DER), dicionário de dados, estrutura do `db.json` e rotas da API.
+* [🛠️ Especificação Técnica (Tech Spec)](docs/architecture.md) - Diagrama de banco de dados (DER), dicionário de dados, estrutura do `db.json` e rotas da API.
 
 ## 🎨 Design
 
