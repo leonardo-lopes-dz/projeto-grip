@@ -54,6 +54,11 @@ https://SEU-USUARIO.github.io/grip/
 
 ## 📱 Telas da aplicação
 
+<img width="1600" height="1280" alt="screen" src="https://github.com/user-attachments/assets/97e61c10-5e76-4892-afa7-2f1c64758324" />
+<img width="1600" height="1280" alt="screen" src="https://github.com/user-attachments/assets/169960b2-75c6-4884-aa5b-c0c1e184becc" />
+<img width="1600" height="1280" alt="screen" src="https://github.com/user-attachments/assets/2822a263-ed6e-42f4-ae51-af0f3ad69cb2" />
+<img width="1600" height="1280" alt="screen" src="https://github.com/user-attachments/assets/0d5469ed-1349-4bea-baf9-b14256566f7a" />
+
 > 🚧 **Em andamento.** As telas da aplicação serão adicionadas conforme forem desenvolvidas e implementadas no projeto.
 
 ## 👨‍💻 Projeto
