@@ -6,7 +6,7 @@ Este projeto tem como objetivo desenvolver progressivamente e de forma didática
 
 O **GRIP** permite que o usuário consulte exercícios de acordo com o grupo muscular escolhido, selecione os exercícios desejados e monte treinos personalizados, definindo informações como séries e repetições.
 
-O diferencial da aplicação é facilitar a **montagem de treinos a partir dos grupos musculares**, utilizando uma API Fake para consultar e disponibilizar os exercícios relacionados ao grupo selecionado.
+O diferencial da aplicação é facilitar a **montagem de treinos a partir dos grupos musculares**, utilizando uma API Fake para consultar os exercícios relacionados ao grupo selecionado.
 
 O frontend da aplicação é desenvolvido com **HTML, CSS e JavaScript**, utilizando um framework CSS para construção de layouts responsivos. O backend é simulado por uma **API Fake utilizando JSON Server**.
 
@@ -19,7 +19,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 🎨 Design
 
-* [🎨 Design System](./docs/design-system.md) - Identidade visual, cores, tipografia e padrões de componentes da aplicação.
+* [🎨 Design System](docs/design-system.md) - Identidade visual, cores, tipografia e padrões de componentes da aplicação.
 * [🖼️ Protótipo no Stitch](https://stitch.withgoogle.com/projects/464266996928876852) - Telas e protótipo interativo da aplicação.
 
 ## 🌐 Site em Produção - GitHub Pages
@@ -34,7 +34,7 @@ https://SEU-USUARIO.github.io/grip/
 
 * **HTML5** - Estrutura das páginas.
 * **CSS3** - Estilização e responsividade.
-* **Framework CSS:** Bootstrap / MaterializeCSS
+* **Bootstrap** - Framework CSS utilizado para construção dos layouts e componentes responsivos.
 * **JavaScript** - Lógica da aplicação e consumo da API.
 * **jQuery** - Manipulação do DOM e interatividade.
 * **JSON Server** - Simulação de uma API REST.
@@ -50,16 +50,25 @@ https://SEU-USUARIO.github.io/grip/
 
 🚧 **Em desenvolvimento**
 
-> O projeto será desenvolvido progressivamente, com novas funcionalidades e melhorias sendo adicionadas conforme o andamento da implementação.
+> O protótipo visual da aplicação já foi desenvolvido e a implementação do sistema está em andamento.
 
 ## 📱 Telas da aplicação
 
-<img width="1600" height="1280" alt="screen" src="https://github.com/user-attachments/assets/97e61c10-5e76-4892-afa7-2f1c64758324" />
-<img width="1600" height="1280" alt="screen" src="https://github.com/user-attachments/assets/169960b2-75c6-4884-aa5b-c0c1e184becc" />
-<img width="1600" height="1280" alt="screen" src="https://github.com/user-attachments/assets/2822a263-ed6e-42f4-ae51-af0f3ad69cb2" />
-<img width="1600" height="1280" alt="screen" src="https://github.com/user-attachments/assets/0d5469ed-1349-4bea-baf9-b14256566f7a" />
+### 🏠 Página Inicial
 
-> 🚧 **Em andamento.** As telas da aplicação serão adicionadas conforme forem desenvolvidas e implementadas no projeto.
+<img width="1600" height="1280" alt="Página inicial do GRIP" src="https://github.com/user-attachments/assets/97e61c10-5e76-4892-afa7-2f1c64758324" />
+
+### 🏋️ Exercícios
+
+<img width="1600" height="1280" alt="Página de exercícios do GRIP" src="https://github.com/user-attachments/assets/169960b2-75c6-4884-aa5b-c0c1e184becc" />
+
+### 🛠️ Montar Treino
+
+<img width="1600" height="1280" alt="Página de montagem de treino do GRIP" src="https://github.com/user-attachments/assets/2822a263-ed6e-42f4-ae51-af0f3ad69cb2" />
+
+### 📋 Meus Treinos
+
+<img width="1600" height="1280" alt="Página de meus treinos do GRIP" src="https://github.com/user-attachments/assets/0d5469ed-1349-4bea-baf9-b14256566f7a" />
 
 ## 👨‍💻 Projeto
 
