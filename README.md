@@ -61,21 +61,23 @@ A **Wger API** foi escolhida por disponibilizar uma base de dados relacionada di
 
 ## 📱 Telas da aplicação
 
+## 📱 Telas da aplicação
+
 ### 📋 Meus Treinos
 
-<img width="1600" height="1280" alt="Página inicial do GRIP" src="img/meus-treinos.png" />
+<img width="1600" height="1280" alt="Página inicial do GRIP" src="https://github.com/user-attachments/assets/97e61c10-5e76-4892-afa7-2f1c64758324" />
 
 ### 🛠️ Montar Treino
 
-<img width="1600" height="1280" alt="Página de exercícios do GRIP" src="img/montar-treino.png" />
+<img width="1600" height="1280" alt="Página de exercícios do GRIP" src="https://github.com/user-attachments/assets/169960b2-75c6-4884-aa5b-c0c1e184becc" />
 
 ### 🏋️ Exercícios
 
-<img width="1600" height="1280" alt="Página de montagem de treino do GRIP" src="img/exercicios.png" />
+<img width="1600" height="1280" alt="Página de montagem de treino do GRIP" src="https://github.com/user-attachments/assets/2822a263-ed6e-42f4-ae51-af0f3ad69cb2" />
 
 ### 🏠 Página Inicial
 
-<img width="1600" height="1280" alt="Página de meus treinos do GRIP" src="img/home.png" />
+<img width="1600" height="1280" alt="Página de meus treinos do GRIP" src="https://github.com/user-attachments/assets/0d5469ed-1349-4bea-baf9-b14256566f7a" />
 
 ## 👨‍💻 Projeto
 
