@@ -117,3 +117,19 @@ Esta é a representação em formato JSON do banco de dados simulado. Esta estru
     ]
 }
 ```
+
+## 5. Versões das Tecnologias
+
+As versões abaixo definem as tecnologias utilizadas na implementação do sistema GRIP.
+
+* **Bootstrap:** v5.3.3
+* **jQuery:** v3.7.1
+* **JSON Server:** v1.0.0-beta.15
+* **Wger API:** v2
+* **JavaScript:** ES6+
+* **HTML:** HTML5
+* **CSS:** CSS3
+
+### Justificativa
+
+O registro das versões exatas das tecnologias busca garantir compatibilidade e previsibilidade durante o desenvolvimento do projeto. Essa especificação também serve como referência para ferramentas de Inteligência Artificial, como Cursor e GitHub Copilot, permitindo que o código seja gerado considerando corretamente as classes, métodos e recursos disponíveis nas versões utilizadas.
