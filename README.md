@@ -35,12 +35,19 @@ https://SEU-USUARIO.github.io/grip/
 * **HTML5** - Estrutura das páginas.
 * **CSS3** - Estilização e responsividade.
 * **Bootstrap** - Framework CSS utilizado para construção dos layouts e componentes responsivos.
-* **JavaScript** - Lógica da aplicação e consumo da API.
+* **JavaScript** - Lógica da aplicação e consumo das APIs.
 * **jQuery** - Manipulação do DOM e interatividade.
 * **JSON Server** - Simulação de uma API REST.
+* **Wger API** - API pública utilizada para consulta de exercícios, grupos musculares e equipamentos.
 * **Node.js** - Ambiente de desenvolvimento.
 * **NPM** - Gerenciamento de dependências.
 * **Git / GitHub** - Versionamento e hospedagem do projeto.
+
+### Justificativa das escolhas
+
+O **Bootstrap** foi escolhido por oferecer componentes prontos, suporte à criação de layouts responsivos e integração com Flexbox e Grid, facilitando o desenvolvimento de uma interface adaptável para diferentes tamanhos de tela. Além disso, possui ampla utilização e uma comunidade ativa, o que facilita a consulta de documentação e exemplos durante o desenvolvimento.
+
+A **Wger API** foi escolhida por disponibilizar uma base de dados relacionada diretamente ao objetivo do GRIP, permitindo consultar exercícios, grupos musculares e equipamentos. A integração com essa API agrega valor ao sistema ao possibilitar que os exercícios sejam obtidos dinamicamente, evitando a necessidade de cadastrar manualmente todos os exercícios na aplicação e permitindo a montagem de treinos a partir do grupo muscular selecionado.
 
 ## 🚀 Manual de execução
 
