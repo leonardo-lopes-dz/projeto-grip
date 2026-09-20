@@ -61,8 +61,6 @@ A **Wger API** foi escolhida por disponibilizar uma base de dados relacionada di
 
 ## 📱 Telas da aplicação
 
-## 📱 Telas da aplicação
-
 ### 📋 Meus Treinos
 
 <img width="1600" height="1280" alt="Página inicial do GRIP" src="https://github.com/user-attachments/assets/97e61c10-5e76-4892-afa7-2f1c64758324" />
