@@ -82,3 +82,13 @@ A **Wger API** foi escolhida por disponibilizar uma base de dados relacionada di
 **GRIP — Sistema de Montagem e Organização de Treinos**
 
 Projeto desenvolvido para fins acadêmicos e didáticos.
+
+## Atividade 06 - Checklist:
+
+- [x] Configurei minha identidade no Git
+- [x] Clonei o repositório do meu projeto
+- [x] Inicializei o NPM (package.json)
+- [x] Criei o .gitignore ignorando node_modules e .env
+- [x] Instalei jquery e uuid como dependências de produção
+- [x] Instalei gh-pages como dependência de desenvolvimento
+- [x] Fiz commit e push para a branch main
