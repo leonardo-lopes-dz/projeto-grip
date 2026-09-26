@@ -41,12 +41,10 @@ Abaixo estão as funcionalidades principais do MVP (Minimum Viable Product), esc
 
 * **US07 - Visualização de Treinos:** Como um Usuário, quero visualizar os treinos que criei, para consultar minhas rotinas de exercícios.
 
-* **US08 - Visualização de Treino:** Como um Usuário, quero visualizar os exercícios, séries e repetições de um treino, para saber como ele está estruturado.
-
-* **US09 - Edição de Treino:** Como um Usuário, quero editar um treino existente, para alterar seus exercícios, séries, repetições ou informações gerais.
+* **US08 - Edição de Treino:** Como um Usuário, quero editar um treino existente, para alterar seus exercícios, séries, repetições ou informações gerais.
 
 ### 🏠 Épico 4: Dashboard
 
-* **US10 - Visualização do Dashboard:** Como um Usuário, quero visualizar um resumo dos meus treinos e exercícios, para acessar rapidamente as principais informações do sistema.
+* **US09 - Visualização do Dashboard:** Como um Usuário, quero visualizar um resumo dos meus treinos e exercícios, para acessar rapidamente as principais informações do sistema.
 
   * *Critérios de Aceitação:* O dashboard deve apresentar informações como quantidade de treinos cadastrados, quantidade de exercícios disponíveis e acesso rápido à montagem de um novo treino.
