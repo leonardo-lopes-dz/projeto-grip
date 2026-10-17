@@ -1,0 +1,327 @@
+/* GRIP - Design System & Custom Styles on top of Bootstrap 5.3 */
+
+:root, [data-bs-theme="dark"] {
+  --grip-bg: #111317;
+  --grip-surface-lowest: #0c0e12;
+  --grip-surface-low: #1a1c1f;
+  --grip-surface: #1e2023;
+  --grip-surface-high: #282a2e;
+  --grip-surface-highest: #333539;
+  --grip-surface-variant: #333539;
+  
+  --grip-primary: #c3f400; /* Neon Electric Lime */
+  --grip-primary-hover: #abd600;
+  --grip-primary-dim: rgba(195, 244, 0, 0.15);
+  --grip-on-primary: #161e00;
+  
+  --grip-text: #e2e2e7;
+  --grip-text-muted: #9e9ea3;
+  --grip-text-variant: #c4c9ac;
+  
+  --grip-border: rgba(255, 255, 255, 0.08);
+  --grip-border-subtle: #3a3a3c;
+  --grip-border-focus: rgba(195, 244, 0, 0.5);
+
+  --bs-body-bg: var(--grip-bg);
+  --bs-body-color: var(--grip-text);
+  --bs-body-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --bs-primary: #c3f400;
+  --bs-border-color: var(--grip-border-subtle);
+}
+
+body {
+  background-color: var(--grip-bg);
+  color: var(--grip-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--grip-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--grip-surface-highest);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555b44;
+}
+
+/* Typography */
+.font-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.font-caps {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.brand-logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  color: var(--grip-primary);
+  line-height: 1;
+}
+
+/* Surfaces */
+.bg-grip-surface {
+  background-color: var(--grip-surface) !important;
+}
+.bg-grip-surface-low {
+  background-color: var(--grip-surface-low) !important;
+}
+.bg-grip-surface-lowest {
+  background-color: var(--grip-surface-lowest) !important;
+}
+.bg-grip-surface-high {
+  background-color: var(--grip-surface-high) !important;
+}
+.bg-grip-surface-highest {
+  background-color: var(--grip-surface-highest) !important;
+}
+.bg-grip-primary {
+  background-color: var(--grip-primary) !important;
+  color: var(--grip-on-primary) !important;
+}
+.text-grip-primary {
+  color: var(--grip-primary) !important;
+}
+.text-grip-muted {
+  color: var(--grip-text-muted) !important;
+}
+.border-grip {
+  border-color: var(--grip-border-subtle) !important;
+}
+
+/* Buttons */
+.btn-grip-primary {
+  background-color: var(--grip-primary);
+  color: var(--grip-on-primary);
+  font-weight: 700;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(195, 244, 0, 0.2);
+}
+.btn-grip-primary:hover, .btn-grip-primary:focus {
+  background-color: var(--grip-primary-hover);
+  color: var(--grip-on-primary);
+  box-shadow: 0 0 25px rgba(195, 244, 0, 0.35);
+  transform: translateY(-1px);
+}
+.btn-grip-outline {
+  background-color: var(--grip-surface-high);
+  color: var(--grip-text);
+  border: 1px solid var(--grip-border-subtle);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-grip-outline:hover {
+  background-color: var(--grip-surface-highest);
+  color: #fff;
+  border-color: var(--grip-primary);
+}
+
+/* Navigation items */
+.grip-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--grip-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.grip-nav-link:hover {
+  background-color: var(--grip-surface-highest);
+  color: var(--grip-text);
+}
+.grip-nav-link.active {
+  background-color: var(--grip-primary);
+  color: var(--grip-on-primary);
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(195, 244, 0, 0.2);
+  transform: translateX(4px);
+}
+.grip-nav-link.active .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Sidebar */
+@media (min-width: 768px) {
+  .grip-sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: var(--grip-surface);
+    border-right: 1px solid var(--grip-border-subtle);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .grip-content-wrapper {
+    margin-left: 260px;
+    min-height: 100vh;
+  }
+}
+
+/* Mobile top & bottom navigation */
+.grip-mobile-topbar {
+  background-color: var(--grip-bg);
+  border-bottom: 1px solid var(--grip-border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+.grip-mobile-bottombar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(26, 28, 31, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--grip-border-subtle);
+  z-index: 1025;
+  padding: 0.5rem 1rem 1.25rem;
+}
+.grip-mobile-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--grip-text-muted);
+  text-decoration: none;
+  font-size: 0.65rem;
+  transition: all 0.2s ease;
+}
+.grip-mobile-tab:hover {
+  color: var(--grip-primary);
+}
+.grip-mobile-tab.active {
+  color: var(--grip-primary);
+}
+.grip-mobile-tab.active .badge-icon {
+  background-color: var(--grip-primary);
+  color: var(--grip-on-primary);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(195, 244, 0, 0.3);
+  margin-top: -12px;
+  border: 3px solid var(--grip-bg);
+}
+.grip-mobile-tab.active .badge-icon .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Cards & Bento Grid */
+.grip-card {
+  background-color: var(--grip-surface);
+  border: 1px solid var(--grip-border-subtle);
+  border-radius: 0.875rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.grip-card:hover {
+  border-color: rgba(195, 244, 0, 0.35);
+  box-shadow: 0 0 20px rgba(195, 244, 0, 0.08);
+}
+.grip-card-interactive {
+  cursor: pointer;
+}
+.grip-card-interactive:hover {
+  transform: translateY(-2px);
+  border-color: rgba(195, 244, 0, 0.45);
+  box-shadow: 0 0 25px rgba(195, 244, 0, 0.12);
+}
+
+/* Badges / Chips */
+.grip-badge {
+  background-color: var(--grip-surface-lowest);
+  color: var(--grip-text);
+  border: 1px solid var(--grip-border-subtle);
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.grip-badge-lime {
+  background-color: var(--grip-surface-highest);
+  color: var(--grip-primary);
+  border: 1px solid rgba(195, 244, 0, 0.3);
+}
+
+/* Filter buttons */
+.grip-filter-btn {
+  background-color: var(--grip-surface-highest);
+  color: var(--grip-text-muted);
+  border: 1px solid var(--grip-border-subtle);
+  border-radius: 99px;
+  padding: 0.35rem 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.grip-filter-btn:hover {
+  color: #fff;
+  background-color: var(--grip-surface-high);
+  border-color: var(--grip-border-focus);
+}
+.grip-filter-btn.active {
+  background-color: var(--grip-primary);
+  color: var(--grip-on-primary);
+  border-color: var(--grip-primary);
+  box-shadow: 0 0 12px rgba(195, 244, 0, 0.3);
+}
+
+/* Form inputs */
+.form-control-grip, .form-select-grip {
+  background-color: var(--grip-surface-highest) !important;
+  border: 1px solid var(--grip-border-subtle) !important;
+  color: var(--grip-text) !important;
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.9rem;
+}
+.form-control-grip:focus, .form-select-grip:focus {
+  border-color: var(--grip-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(195, 244, 0, 0.25) !important;
+}
+.form-control-grip::placeholder {
+  color: rgba(226, 226, 231, 0.4);
+}
+
+/* Image zoom effect on hover */
+.img-zoom-container {
+  overflow: hidden;
+}
+.img-zoom-container img {
+  transition: transform 0.5s ease;
+}
+.grip-card:hover .img-zoom-container img {
+  transform: scale(1.05);
+}

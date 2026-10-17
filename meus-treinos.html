@@ -1,0 +1,317 @@
+<!-- Meus Treinos (Desktop) -->
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GRIP - Meus Treinos</title>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,800;1,900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS (Via NPM Local) -->
+  <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom Design System Styles -->
+  <link href="assets/css/grip.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column flex-md-row min-vh-100 position-relative">
+
+  <!-- Mobile TopAppBar -->
+  <header class="d-md-none grip-mobile-topbar w-100 d-flex justify-content-between align-items-center px-4 py-3">
+    <div class="brand-logo fs-3">GRIP</div>
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-link text-grip-muted p-0" aria-label="Configurações">
+        <span class="material-symbols-outlined fs-5">settings</span>
+      </button>
+      <img alt="User avatar" class="rounded-circle object-fit-cover border border-secondary" src="assets/images/meus-treinos-avatar.jpg" width="36" height="36" />
+    </div>
+  </header>
+
+  <!-- Desktop SideNavBar -->
+  <nav class="d-none d-md-flex grip-sidebar flex-column justify-content-between">
+    <div>
+      <div class="d-flex align-items-center gap-3 mb-4 mt-2 px-2">
+        <img alt="User profile photo" class="rounded-circle object-fit-cover border border-2 border-primary-subtle" src="assets/images/meus-treinos-profile.jpg" width="48" height="48" />
+        <div>
+          <div class="brand-logo fs-3">GRIP</div>
+          <div class="font-caps text-grip-muted">Elite Performance</div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column gap-2 mt-4">
+        <a class="grip-nav-link" href="index.html">
+          <span class="material-symbols-outlined">home</span>
+          <span class="fs-6">Início</span>
+        </a>
+        <a class="grip-nav-link" href="exercicios.html">
+          <span class="material-symbols-outlined">fitness_center</span>
+          <span class="fs-6">Exercícios</span>
+        </a>
+        <a class="grip-nav-link" href="montar-treino.html">
+          <span class="material-symbols-outlined">add_box</span>
+          <span class="fs-6">Montar Treino</span>
+        </a>
+        <!-- Active Tab: Meus Treinos -->
+        <a class="grip-nav-link active" href="meus-treinos.html">
+          <span class="material-symbols-outlined">history_edu</span>
+          <span class="fs-6">Meus Treinos</span>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <a href="montar-treino.html" class="btn btn-grip-primary w-100 d-flex align-items-center justify-content-center gap-2 py-3 rounded-3 text-decoration-none">
+        <span class="material-symbols-outlined text-dark">add</span>
+        <span class="font-display fw-bold small text-dark">Novo Treino</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content (d-flex flex-column adicionado para suporte ao Sticky Footer) -->
+  <main class="grip-content-wrapper flex-grow-1 d-flex flex-column p-4 p-lg-5 pb-5 mb-5 mb-md-0">
+    <div class="container-fluid max-w-7xl px-0 d-flex flex-column flex-grow-1">
+
+      <!-- Page Header Section -->
+      <section class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-4 gap-3 border-bottom border-grip pb-4">
+        <div>
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="rounded-pill" style="width: 6px; height: 28px; background-color: var(--grip-primary);"></div>
+            <h1 class="font-display fw-bolder fs-2 text-white mb-0">Meus Treinos</h1>
+          </div>
+          <p class="text-grip-muted fs-6 mb-0 max-w-2xl">
+            Gerencie suas rotinas de alta performance. Selecione um treino abaixo para iniciar ou edite seus blocos de exercícios.
+          </p>
+        </div>
+
+        <!-- Desktop Search & Filter -->
+        <div class="d-none d-md-flex gap-2">
+          <div class="input-group" style="width: 250px;">
+            <span class="input-group-text bg-grip-surface-high border-grip text-grip-muted">
+              <span class="material-symbols-outlined fs-6">search</span>
+            </span>
+            <input type="text" class="form-control form-control-grip border-start-0" placeholder="Buscar treino..." />
+          </div>
+          <button class="btn btn-grip-outline p-2 rounded-2" title="Filtros">
+            <span class="material-symbols-outlined fs-5">filter_list</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Workout Cards Grid -->
+      <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+        
+        <!-- Card 1: Pull Day Hypertrophy (Featured Card with Cover Image) -->
+        <div class="col">
+          <article class="grip-card h-100 d-flex flex-column shadow-lg">
+            <!-- Neon top line accent -->
+            <div class="w-100" style="height: 3px; background: linear-gradient(90deg, transparent, var(--grip-primary), transparent); opacity: 0.6;"></div>
+            
+            <!-- Cover image banner -->
+            <div class="position-relative img-zoom-container" style="height: 140px; background-color: var(--grip-surface-highest);">
+              <img src="assets/images/meus-treinos-gym-bg.jpg" alt="Gym equipment barbell" class="w-100 h-100 object-fit-cover opacity-60" />
+              <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(0deg, var(--grip-surface) 0%, transparent 80%);"></div>
+              
+              <!-- Badges -->
+              <div class="position-absolute bottom-0 start-0 p-3 d-flex gap-2 z-1">
+                <span class="grip-badge grip-badge-lime">COSTAS</span>
+                <span class="grip-badge grip-badge-lime">BÍCEPS</span>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between gap-3">
+              <div>
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h2 class="font-display fw-bold fs-5 text-white mb-0">Pull Day Hypertrophy</h2>
+                  <!-- Action buttons -->
+                  <div class="btn-group bg-grip-surface-high rounded-pill p-1 border border-grip">
+                    <button class="btn btn-sm btn-link text-grip-muted p-1" title="Editar">
+                      <span class="material-symbols-outlined fs-6">edit</span>
+                    </button>
+                    <button class="btn btn-sm btn-link text-grip-muted p-1" title="Excluir">
+                      <span class="material-symbols-outlined fs-6">delete</span>
+                    </button>
+                  </div>
+                </div>
+                <p class="text-grip-muted small mb-0">
+                  Foco em densidade de dorsais e pico de contração de bíceps com carga progressiva.
+                </p>
+              </div>
+
+              <div>
+                <!-- Metadata info -->
+                <div class="d-flex align-items-center gap-4 pt-3 border-top border-grip text-grip-muted font-caps">
+                  <div class="d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-6 text-grip-primary">schedule</span>
+                    <span>65 MIN</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-6 text-grip-primary">format_list_bulleted</span>
+                    <span>6 EXERCÍCIOS</span>
+                  </div>
+                </div>
+
+                <a href="#" class="btn btn-grip-primary w-100 py-3 rounded-3 mt-3 d-flex align-items-center justify-content-center gap-2 text-decoration-none">
+                  <span class="material-symbols-outlined text-dark fs-5">play_arrow</span>
+                  <span class="font-display fw-bold text-dark text-uppercase small tracking-wide">INICIAR</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 2: Push Day - Força Bruta -->
+        <div class="col">
+          <article class="grip-card h-100 d-flex flex-column">
+            <!-- Header banner with badges -->
+            <div class="p-3 bg-grip-surface-high d-flex align-items-end" style="height: 100px; background: radial-gradient(ellipse at top right, rgba(51,53,57,0.8), var(--grip-surface));">
+              <div class="d-flex gap-2">
+                <span class="grip-badge">PEITO</span>
+                <span class="grip-badge">TRÍCEPS</span>
+                <span class="grip-badge">OMBRO</span>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between gap-3">
+              <div>
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h2 class="font-display fw-bold fs-5 text-white mb-0">Push Day - Força Bruta</h2>
+                  <div class="btn-group bg-grip-surface-high rounded-pill p-1 border border-grip">
+                    <button class="btn btn-sm btn-link text-grip-muted p-1" title="Editar">
+                      <span class="material-symbols-outlined fs-6">edit</span>
+                    </button>
+                    <button class="btn btn-sm btn-link text-grip-muted p-1" title="Excluir">
+                      <span class="material-symbols-outlined fs-6">delete</span>
+                    </button>
+                  </div>
+                </div>
+                <p class="text-grip-muted small mb-0">
+                  Foco em progressão de carga no supino e desenvolvimento militar. Baixo volume, alta intensidade.
+                </p>
+              </div>
+
+              <div>
+                <!-- Metadata info -->
+                <div class="d-flex align-items-center gap-4 pt-3 border-top border-grip text-grip-muted font-caps">
+                  <div class="d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-6 text-grip-primary">schedule</span>
+                    <span>50 MIN</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-6 text-grip-primary">format_list_bulleted</span>
+                    <span>5 EXERCÍCIOS</span>
+                  </div>
+                </div>
+
+                <a href="#" class="btn btn-grip-outline w-100 py-3 rounded-3 mt-3 d-flex align-items-center justify-content-center gap-2 text-decoration-none">
+                  <span class="material-symbols-outlined text-grip-primary fs-5">play_arrow</span>
+                  <span class="font-display fw-bold text-uppercase small tracking-wide">INICIAR</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 3: Leg Day Metabólico -->
+        <div class="col">
+          <article class="grip-card h-100 d-flex flex-column">
+            <!-- Header banner with badges -->
+            <div class="p-3 bg-grip-surface-high d-flex align-items-end" style="height: 100px; background: radial-gradient(ellipse at top right, rgba(51,53,57,0.8), var(--grip-surface));">
+              <div class="d-flex gap-2">
+                <span class="grip-badge">QUADRÍCEPS</span>
+                <span class="grip-badge">POSTERIOR</span>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between gap-3">
+              <div>
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h2 class="font-display fw-bold fs-5 text-white mb-0">Leg Day Metabólico</h2>
+                  <div class="btn-group bg-grip-surface-high rounded-pill p-1 border border-grip">
+                    <button class="btn btn-sm btn-link text-grip-muted p-1" title="Editar">
+                      <span class="material-symbols-outlined fs-6">edit</span>
+                    </button>
+                    <button class="btn btn-sm btn-link text-grip-muted p-1" title="Excluir">
+                      <span class="material-symbols-outlined fs-6">delete</span>
+                    </button>
+                  </div>
+                </div>
+                <p class="text-grip-muted small mb-0">
+                  Treino com foco em volume e estresse metabólico. Prepara-se para o pump extremo.
+                </p>
+              </div>
+
+              <div>
+                <!-- Metadata info -->
+                <div class="d-flex align-items-center gap-4 pt-3 border-top border-grip text-grip-muted font-caps">
+                  <div class="d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-6 text-grip-primary">schedule</span>
+                    <span>75 MIN</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-6 text-grip-primary">format_list_bulleted</span>
+                    <span>8 EXERCÍCIOS</span>
+                  </div>
+                </div>
+
+                <a href="#" class="btn btn-grip-outline w-100 py-3 rounded-3 mt-3 d-flex align-items-center justify-content-center gap-2 text-decoration-none">
+                  <span class="material-symbols-outlined text-grip-primary fs-5">play_arrow</span>
+                  <span class="font-display fw-bold text-uppercase small tracking-wide">INICIAR</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 4: Criar Novo Treino (Placeholder) -->
+        <div class="col">
+          <a href="montar-treino.html" class="grip-card h-100 d-flex flex-column align-items-center justify-content-center text-center p-4 border-dashed text-decoration-none" style="min-height: 320px; border-style: dashed !important; border-width: 2px !important;">
+            <div class="bg-grip-surface-highest rounded-circle p-3 mb-3 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+              <span class="material-symbols-outlined text-grip-primary fs-2">add</span>
+            </div>
+            <h2 class="font-display fw-bold fs-5 text-white mb-2">Criar Novo Treino</h2>
+            <p class="text-grip-muted small px-3 mb-0">Monte uma rotina personalizada do zero.</p>
+          </a>
+        </div>
+
+      </section>
+
+      <!-- Sticky Footer Exigido na Parte 3 (Com mt-auto) -->
+      <footer class="mt-auto pt-4 pb-2 border-top border-grip text-center text-grip-muted small">
+        <p class="mb-0">&copy; 2026 GRIP - Todos os direitos reservados.</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Mobile BottomNavBar -->
+  <nav class="d-md-none grip-mobile-bottombar d-flex justify-content-around align-items-center">
+    <a class="grip-mobile-tab" href="index.html">
+      <span class="material-symbols-outlined fs-5 mb-1">home</span>
+      <span class="font-caps">Início</span>
+    </a>
+    <a class="grip-mobile-tab" href="exercicios.html">
+      <span class="material-symbols-outlined fs-5 mb-1">fitness_center</span>
+      <span class="font-caps">Exercícios</span>
+    </a>
+    <a class="grip-mobile-tab" href="montar-treino.html">
+      <span class="material-symbols-outlined fs-5 mb-1">add_circle</span>
+      <span class="font-caps">Montar</span>
+    </a>
+    <a class="grip-mobile-tab active" href="meus-treinos.html">
+      <div class="badge-icon">
+        <span class="material-symbols-outlined fs-5">format_list_bulleted</span>
+      </div>
+      <span class="font-caps mt-1">Treinos</span>
+    </a>
+  </nav>
+
+  <!-- Bootstrap 5.3 Bundle JS (Via NPM Local) -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
