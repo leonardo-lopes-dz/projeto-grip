@@ -9,21 +9,21 @@ Neste projeto, utilizamos um framework UI e aplicamos customizações para refle
 
 ### 2. Paleta de Cores (Customização)
 
-A identidade visual do GRIP utiliza uma base escura em tons de preto e cinza, combinada com cores vibrantes para destacar ações e informações importantes.
+A identidade visual do GRIP utiliza uma base escura em grafite profundo, contrastada com um verde-limão neon que cria um efeito de "brilho". A paleta é construída sobre contraste extremo, com texto principal mantendo proporção mínima de 7:1 sobre o fundo, para garantir leitura em ambientes de treino de alta intensidade.
 
-- **Cor Primária (Volt Green):** `#C5F400`
-  - _Uso:_ Botões principais, ações importantes, estados ativos e elementos de destaque. Representa energia, força e ação.
-- **Cor Primária Escura:** `#ACD600`
-  - _Uso:_ Estados de interação e variações da cor primária.
-- **Cor Secundária (Electric Blue):** `#00E3FD`
-  - _Uso:_ Ações secundárias, informações, destaques e elementos relacionados a dados.
-- **Cor de Fundo (Background):** `#131313`
-  - _Uso:_ Fundo principal das páginas.
-- **Cor de Superfície:** `#1C1B1B`
-  - _Uso:_ Cards, formulários e principais áreas de conteúdo.
-- **Cor de Superfície Elevada:** `#2A2A2A`
-  - _Uso:_ Elementos que precisam de maior destaque em relação às superfícies padrão.
-- **Cor de Texto Principal:** `#E5E2E1`
+- **Cor Primária (Electric Lime):** `#C3F400`
+  - _Uso:_ Botões principais, ações importantes, estados ativos e destaques críticos de dados. Representa energia e sinal de "go".
+- **Cor Primária Escura:** `#ABD600`
+  - _Uso:_ Estados de interação, variações da cor primária e início do gradiente da barra de progresso.
+- **Cor Secundária (Cinza Claro):** `#C8C6C5`
+  - _Uso:_ Elementos de apoio, ícones inativos e ações neutras. Sua variação `#474746` é usada em fundos de elementos secundários.
+- **Cor de Fundo (Background):** `#111317`
+  - _Uso:_ Fundo principal das páginas. Um grafite levemente quente, que evita o "preto esmagado" do `#000000` e permite profundidade sutil por camadas.
+- **Cor de Superfície:** `#1E2023`
+  - _Uso:_ Cards, formulários e principais áreas de conteúdo, criando separação clara do fundo.
+- **Cor de Superfície Elevada:** `#282A2E`
+  - _Uso:_ Elementos que precisam de maior destaque em relação às superfícies padrão, como modais e overlays.
+- **Cor de Texto Principal:** `#E2E2E7`
   - _Uso:_ Títulos, textos principais e informações de maior importância.
 - **Cor de Texto Secundário:** `#C4C9AC`
   - _Uso:_ Textos auxiliares, descrições e informações de menor destaque.
@@ -32,62 +32,65 @@ A identidade visual do GRIP utiliza uma base escura em tons de preto e cinza, co
 
 ### 3. Tipografia
 
-A tipografia do GRIP combina uma fonte de alto impacto para títulos com fontes voltadas à legibilidade e apresentação de dados.
+A tipografia do GRIP combina uma fonte geométrica de alto impacto para títulos com fontes voltadas à legibilidade e à apresentação de dados.
 
-- **Títulos e Destaques:** `Montserrat, sans-serif` (Peso: 700 a 900).
+- **Títulos e Destaques:** `Plus Jakarta Sans, sans-serif` (Peso: 600 a 800). Espaçamento entre letras apertado (-0.01em a -0.02em) e pesos altos transmitem força.
 - **Textos Corridos e Formulários:** `Inter, sans-serif` (Peso: 400).
-- **Dados e Informações Numéricas:** `JetBrains Mono, monospace` (Peso: 600 a 700).
+- **Dados e Informações Numéricas:** `Space Grotesk, sans-serif` (Peso: 700). Também usada em rótulos: 12px, caixa alta e espaçamento de 0.08em.
 - **Destaques:** Títulos importantes podem utilizar letras maiúsculas para reforçar a identidade esportiva e transmitir maior impacto visual.
+- **Escala:** Display 40px/48px, Headline 32px/40px (28px/34px no mobile), Title 20px/28px, Corpo 16px/24px e 14px/20px.
 
 ### 4. Diretrizes de Uso de Componentes
 
-Os componentes da interface devem manter a identidade esportiva e tecnológica do GRIP, utilizando contrastes fortes e elementos visuais simples.
+Os componentes da interface devem manter a identidade esportiva e tecnológica do GRIP, utilizando contrastes fortes, formas geométricas limpas e elementos visuais simples.
 
-- **Botões:** Ações principais devem utilizar a cor primária (Volt Green) com texto escuro. Ações secundárias podem utilizar bordas na cor secundária (Electric Blue) ou na cor branca. Ações menos importantes podem utilizar o estilo Ghost, sem preenchimento.
-- **Cards:** Utilizados para exibir exercícios, treinos e informações resumidas. Devem utilizar superfícies escuras e bordas discretas, mantendo uma hierarquia visual clara.
-- **Formulários:** Os campos devem utilizar fundo escuro, bordas sutis e destaque em Volt Green quando estiverem em foco.
-- **Chips:** Utilizados para identificar grupos musculares e outras categorias relacionadas aos exercícios. Devem possuir cores de destaque sem comprometer a legibilidade.
-- **Indicadores Numéricos:** Informações como séries e repetições devem utilizar `JetBrains Mono` para facilitar a leitura e reforçar a identidade técnica do sistema.
-- **Barra de Progresso:** Deve utilizar a combinação das cores Electric Blue e Volt Green para representar progresso e evolução.
-- **Navbar:** Deve utilizar a base escura da identidade visual e apresentar o nome/logo do GRIP junto aos principais caminhos de navegação.
+- **Botões:** Ações principais devem ser sólidas na cor primária (Electric Lime) com texto preto, em largura total quando possível, para máxima visibilidade. Ações secundárias utilizam o estilo ghost, sem preenchimento e com borda na cor primária. Ações menos importantes podem utilizar texto simples, sem preenchimento e sem borda.
+- **Cards:** Utilizados para exibir exercícios, treinos e informações resumidas. Devem utilizar a cor de superfície, um gradiente sutil de cima para baixo e borda de 1px. Os títulos dentro dos cards usam o estilo Title (20px). Alta densidade de informação é permitida dentro dos cards.
+- **Formulários:** Os campos devem utilizar fundo mais escuro que o do card, com destaque sutil e brilho em Electric Lime quando estiverem em foco. Os rótulos usam o estilo de rótulo (Space Grotesk, caixa alta) para reforçar o visual técnico.
+- **Chips:** Utilizados para identificar grupos musculares (ex.: Peito, Tríceps) e outras categorias relacionadas aos exercícios. Devem ter fundo escuro, texto branco e nenhuma borda, para manter o foco no layout principal.
+- **Indicadores Numéricos:** Informações como séries, repetições e carga devem utilizar Space Grotesk para facilitar a leitura e reforçar a identidade técnica do sistema.
+- **Barra de Progresso:** Deve ter trilho fino e de alto contraste, com preenchimento em gradiente do verde escuro (`#ABD600`) para o Electric Lime (`#C3F400`), simulando movimento e energia.
+- **Navbar:** Deve utilizar a base escura da identidade visual, com fundo desfocado (blur alto), e apresentar o nome/logo do GRIP junto aos principais caminhos de navegação. A cor primária fica reservada ao ícone e ao indicador do item ativo.
 
 ### 5. Layout e Responsividade
 
-A aplicação utiliza um sistema de espaçamento baseado em uma grade de **8px**, garantindo consistência entre os diferentes elementos da interface.
+A aplicação utiliza um layout fluido e um sistema de espaçamento baseado em uma grade de **8px**, garantindo consistência entre os diferentes elementos da interface.
 
-- **Espaçamento base:** `8px`
-- **Margem do container:** `20px`
-- **Espaçamento entre elementos:** `16px`
-- **Espaçamento entre seções:** `40px`
+- **Espaçamento base:** `4px`
+- **Margem do container:** `20px` no mobile, ampliada para `40px` em tablet e desktop
+- **Espaçamento entre elementos:** `16px` na vertical e `12px` na horizontal
+- **Espaçamento entre seções:** `32px` ou mais, para evitar fadiga visual
 
 O desenvolvimento deve seguir o conceito de **Mobile First**, considerando que o sistema pode ser utilizado durante a realização de treinos.
 
-- **Mobile:** Organização dos conteúdos em uma única coluna e elementos de interação com áreas de toque de pelo menos `44px`.
-- **Desktop:** Utilização do grid do framework para distribuir cards e conteúdos em múltiplas colunas.
+- **Mobile:** Organização dos conteúdos em uma única coluna, com empilhamento vertical, e elementos de interação com áreas de toque de pelo menos `44px`.
+- **Desktop:** Utilização do grid do framework para distribuir cards e conteúdos em múltiplas colunas. O conteúdo é alinhado à esquerda, com gráficos e botões principais podendo usar centralização ou largura total.
 
 ### 6. Formas e Elevação
 
-A interface utiliza bordas arredondadas e diferentes níveis de superfície para criar hierarquia visual sem depender de sombras excessivas.
+A interface utiliza bordas arredondadas e camadas tonais para criar hierarquia visual sem depender de sombras pesadas, mantendo um perfil limpo e moderno.
 
 - **Border Radius padrão:** `8px`
-- **Border Radius médio:** `12px`
-- **Border Radius grande:** `16px`
-- **Elementos especiais:** Podem utilizar bordas totalmente arredondadas (`9999px`).
+- **Border Radius médio:** `12px` (botões e campos de formulário)
+- **Border Radius grande:** `16px` (cards)
+- **Border Radius extra grande:** `24px`
+- **Elementos especiais:** Chips e tags utilizam bordas totalmente arredondadas (`9999px`), para se diferenciarem dos containers acionáveis.
 
 A profundidade dos componentes deve ser criada principalmente através da diferença entre tons de superfície e bordas sutis.
 
-- **Background:** `#131313`
-- **Surface:** `#1C1B1B`
-- **Surface elevada:** `#2A2A2A`
-- **Bordas:** Tons escuros e discretos para separar elementos visualmente.
-- **Estados ativos:** Podem utilizar um brilho sutil baseado na cor primária ou secundária.
+- **Background:** `#111317`
+- **Surface:** `#1E2023`
+- **Surface elevada:** `#282A2E`, com desfoque de fundo (`blur` de 12px) em modais e overlays
+- **Bordas:** `1px` em `#444933`, discretas, para separar elementos sem adicionar volume.
+- **Estados ativos:** Utilizam, no lugar de sombras, um brilho (glow) na cor primária com 20% a 30% de opacidade.
+- **Indicadores visuais:** Barras verticais de `4px` de largura na cor primária marcam itens ativos de lista e títulos de seção.
 
 ### 7. Identidade Visual
 
-A identidade do GRIP busca transmitir:
+A identidade do GRIP busca transmitir intensidade, disciplina e avanço tecnológico:
 
 - **Força:** através de títulos pesados e contrastes elevados.
-- **Energia:** através do uso do Volt Green em ações e elementos importantes.
-- **Precisão:** através da utilização da JetBrains Mono em dados e informações de treino.
-- **Tecnologia:** através da combinação de superfícies escuras, Electric Blue e elementos modernos.
+- **Energia:** através do uso do Electric Lime em ações e elementos importantes.
+- **Precisão:** através da utilização da Space Grotesk em dados e informações de treino.
+- **Tecnologia:** através da combinação de superfícies escuras, verde neon com efeito de brilho e elementos modernos.
 - **Performance:** através de uma interface objetiva, com foco nas informações necessárias para a montagem dos treinos.
