@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRIP</title>
+
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+
+  <!--MEU CSS-->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER SUPERIOR (mobile) -->
+  <header class="border-bottom py-3 px-3 sticky-top bg-dark d-md-none">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <!-- ESQUERDA: Logo do Site -->
+      <span class="text-white fs-4 fw-bold">
+        GRIP
+      </span>
+
+      <!-- DIREITA: Link em texto para Editar Perfil (sem link por enquanto) -->
+      <div class="nav nav-pills">
+        <a href="#" class="nav-link text-secondary fw-semibold py-1">
+          <i class="bi bi-person-circle me-1" aria-hidden="true"></i>Perfil
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- NAV BAR INFERIOR (mobile) -->
+  <nav class="navbar fixed-bottom bg-dark d-md-none">
+    <div class="container-fluid py-1">
+      <div class="nav nav-pills w-100 gap-2">
+
+        <!-- Link 1: Início -->
+        <a href="../index.html" class="nav-link text-secondary fw-semibold flex-fill text-center text-nowrap px-2 py-1">
+          <i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Início
+        </a>
+
+        <!-- Link 2: Exercícios -->
+        <a href="exercicios.html" class="nav-link active fw-semibold flex-fill text-center text-nowrap px-2 py-1" aria-current="page">
+          <i class="bi bi-fire me-1" aria-hidden="true"></i>Exercícios
+        </a>
+
+        <!-- Link 3: Treinos -->
+        <a href="treinos.html" class="nav-link text-secondary fw-semibold flex-fill text-center text-nowrap px-2 py-1">
+          <i class="bi bi-bookmark-plus-fill me-1" aria-hidden="true"></i>Treinos
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIDENAV (desktop) -->
+  <aside class="sidenav d-none d-md-flex flex-column p-4 bg-dark position-fixed top-0 bottom-0 start-0">
+    <span class="text-white fs-4 fw-bold mb-4">GRIP</span>
+
+    <nav class="nav nav-pills flex-column mb-auto">
+      <a href="../index.html" class="nav-link text-secondary fw-semibold mb-2">
+        <i class="bi bi-house-door-fill me-2" aria-hidden="true"></i>Início
+      </a>
+      <a href="exercicios.html" class="nav-link active fw-semibold mb-2">
+        <i class="bi bi-fire me-2" aria-hidden="true"></i>Exercícios
+      </a>
+      <a href="treinos.html" class="nav-link text-secondary fw-semibold mb-2">
+        <i class="bi bi-bookmark-plus-fill me-2" aria-hidden="true"></i>Treinos
+      </a>
+    </nav>
+
+    <hr class="border-secondary">
+
+    <div class="nav nav-pills flex-column">
+      <a href="#" class="nav-link text-secondary fw-semibold">
+        <i class="bi bi-person-circle me-2" aria-hidden="true"></i>Perfil
+      </a>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
+  <main class="container py-5 px-3 px-md-5">
+
+    <!-- SEÇÃO DE SAUDAÇÃO (MOBILE FIRST) -->
+    <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+      <section>
+        <h1 class="fw-bold mb-1">Meus exercícios</h1>
+        <p class="fs-6 text-secondary">Exercícios salvos e biblioteca personalizada.</p>
+      </section>
+      <button type="button" class="btn btn-primary btn-lg h-100 fw-bold py-4 col-md-4" data-bs-toggle="modal" data-bs-target="#modal-biblioteca-exercicios">+ Exercício</button>
+    </div>
+
+    <hr class="border-secondary">
+
+    <!-- SEÇÃO DE BUSCA E FILTROS -->
+    <section class="mb-4">
+      <form role="search" class="row g-3">
+
+        <!-- Busca por texto -->
+        <div class="col-12 col-lg-4">
+          <label for="busca-exercicio" class="visually-hidden">Buscar exercício</label>
+          <div class="input-group">
+            <span class="input-group-text" aria-hidden="true">
+              <i class="bi bi-search"></i>
+            </span>
+            <input type="search" id="busca-exercicio" class="form-control" placeholder="Buscar exercício">
+          </div>
+        </div>
+
+        <!-- Filtro: equipamento -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <label for="filtro-equipamento" class="visually-hidden">Equipamento</label>
+          <select id="filtro-equipamento" class="form-select">
+            <option value="" selected>Todos os equipamentos</option>
+            <option value="barra">Barra</option>
+            <option value="halteres">Halteres</option>
+            <option value="maquina">Máquina</option>
+            <option value="cabo">Cabo / Polia</option>
+            <option value="peso-corporal">Peso corporal</option>
+          </select>
+        </div>
+
+        <!-- Filtro: grupo muscular -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <label for="filtro-grupo" class="visually-hidden">Grupo muscular</label>
+          <select id="filtro-grupo" class="form-select">
+            <option value="" selected>Todos os grupos musculares</option>
+            <option value="peito">Peito</option>
+            <option value="costas">Costas</option>
+            <option value="ombros">Ombros</option>
+            <option value="biceps">Bíceps</option>
+            <option value="triceps">Tríceps</option>
+            <option value="pernas">Pernas</option>
+            <option value="abdomen">Abdômen</option>
+          </select>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- SEÇÃO DE CARDS DE EXERCÍCIOS -->
+    <section class="row g-3 row-cols-1 row-cols-sm-2 row-cols-xl-3 mb-4">
+
+      <!-- CARD DE EXERCÍCIO -->
+      <div class="col">
+        <div class="card border-secondary h-100 overflow-hidden">
+
+          <img
+            src="https://res.cloudinary.com/ids4qzpd/image/upload/w_800,f_auto,q_auto/v1794088237/supino-reto.webp"
+            srcset="
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_400,f_auto,q_auto/v1794088237/supino-reto.webp 400w,
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_800,f_auto,q_auto/v1794088237/supino-reto.webp 800w,
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_1200,f_auto,q_auto/v1794088237/supino-reto.webp 1200w"
+            sizes="(min-width: 1200px) 30vw, (min-width: 576px) 45vw, 100vw"
+            class="card-img-top card-img-exercicio" alt="Supino reto" loading="lazy">
+
+          <div class="card-body p-3 pb-2">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h2 class="card-title fs-5 fw-bold mb-0">Supino reto</h2>
+
+              <div class="d-flex flex-shrink-0 gap-1">
+                <button type="button" class="btn btn-sm btn-icone btn-icone-excluir" aria-label="Excluir Supino reto">
+                  <i class="bi bi-trash" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-icone btn-icone-abrir" aria-label="Abrir Supino reto">
+                  <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="mx-3 my-0">
+
+          <div class="card-footer bg-transparent border-0 p-3 d-flex flex-wrap gap-2">
+            <span class="badge text-bg-secondary">Barra</span>
+            <span class="badge text-bg-primary">Peito</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD DE EXERCÍCIO -->
+      <div class="col">
+        <div class="card border-secondary h-100 overflow-hidden">
+
+          <img
+            src="https://res.cloudinary.com/ids4qzpd/image/upload/w_800,f_auto,q_auto/v1794088239/remada-curvada.webp"
+            srcset="
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_400,f_auto,q_auto/v1794088239/remada-curvada.webp 400w,
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_800,f_auto,q_auto/v1794088239/remada-curvada.webp 800w,
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_1200,f_auto,q_auto/v1794088239/remada-curvada.webp 1200w"
+            sizes="(min-width: 1200px) 30vw, (min-width: 576px) 45vw, 100vw"
+            class="card-img-top card-img-exercicio" alt="Remada curvada" loading="lazy">
+
+          <div class="card-body p-3 pb-2">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h2 class="card-title fs-5 fw-bold mb-0">Remada curvada</h2>
+
+              <div class="d-flex flex-shrink-0 gap-1">
+                <button type="button" class="btn btn-sm btn-icone btn-icone-excluir" aria-label="Excluir Remada curvada">
+                  <i class="bi bi-trash" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-icone btn-icone-abrir" aria-label="Abrir Remada curvada">
+                  <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="mx-3 my-0">
+
+          <div class="card-footer bg-transparent border-0 p-3 d-flex flex-wrap gap-2">
+            <span class="badge text-bg-secondary">Barra</span>
+            <span class="badge text-bg-primary">Costas</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD DE EXERCÍCIO -->
+      <div class="col">
+        <div class="card border-secondary h-100 overflow-hidden">
+
+          <img
+            src="https://res.cloudinary.com/ids4qzpd/image/upload/w_800,f_auto,q_auto/v1794088237/rosca-biceps.webp"
+            srcset="
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_400,f_auto,q_auto/v1794088237/rosca-biceps.webp 400w,
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_800,f_auto,q_auto/v1794088237/rosca-biceps.webp 800w,
+              https://res.cloudinary.com/ids4qzpd/image/upload/w_1200,f_auto,q_auto/v1794088237/rosca-biceps.webp 1200w"
+            sizes="(min-width: 1200px) 30vw, (min-width: 576px) 45vw, 100vw"
+            class="card-img-top card-img-exercicio" alt="Rosca bíceps" loading="lazy">
+
+          <div class="card-body p-3 pb-2">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h2 class="card-title fs-5 fw-bold mb-0">Rosca bíceps</h2>
+
+              <div class="d-flex flex-shrink-0 gap-1">
+                <button type="button" class="btn btn-sm btn-icone btn-icone-excluir" aria-label="Excluir Rosca bíceps">
+                  <i class="bi bi-trash" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-icone btn-icone-abrir" aria-label="Abrir Rosca bíceps">
+                  <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="mx-3 my-0">
+
+          <div class="card-footer bg-transparent border-0 p-3 d-flex flex-wrap gap-2">
+            <span class="badge text-bg-secondary">Barra</span>
+            <span class="badge text-bg-primary">Bíceps</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL: BIBLIOTECA DE EXERCÍCIOS -->
+  <div class="modal fade" id="modal-biblioteca-exercicios" tabindex="-1" aria-labelledby="modal-biblioteca-exercicios-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h2 class="modal-title fs-5 fw-bold" id="modal-biblioteca-exercicios-titulo">Adicionar exercício</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+
+        <!-- BUSCA E FILTROS (fixos, fora da área de rolagem) -->
+        <div class="px-3 py-3 border-bottom">
+          <form role="search" class="row g-2">
+
+            <!-- Busca por texto -->
+            <div class="col-12">
+              <label for="biblioteca-busca" class="visually-hidden">Buscar exercício</label>
+              <div class="input-group">
+                <span class="input-group-text" aria-hidden="true">
+                  <i class="bi bi-search"></i>
+                </span>
+                <input type="search" id="biblioteca-busca" class="form-control" placeholder="Buscar exercício">
+              </div>
+            </div>
+
+            <!-- Filtro: equipamento -->
+            <div class="col-12 col-sm-6">
+              <label for="biblioteca-equipamento" class="visually-hidden">Equipamento</label>
+              <select id="biblioteca-equipamento" class="form-select">
+                <option value="" selected>Todos os equipamentos</option>
+                <option value="barra">Barra</option>
+                <option value="halteres">Halteres</option>
+                <option value="maquina">Máquina</option>
+                <option value="cabo">Cabo / Polia</option>
+                <option value="peso-corporal">Peso corporal</option>
+              </select>
+            </div>
+
+            <!-- Filtro: grupo muscular -->
+            <div class="col-12 col-sm-6">
+              <label for="biblioteca-grupo" class="visually-hidden">Grupo muscular</label>
+              <select id="biblioteca-grupo" class="form-select">
+                <option value="" selected>Todos os grupos musculares</option>
+                <option value="peito">Peito</option>
+                <option value="costas">Costas</option>
+                <option value="ombros">Ombros</option>
+                <option value="biceps">Bíceps</option>
+                <option value="triceps">Tríceps</option>
+                <option value="pernas">Pernas</option>
+                <option value="abdomen">Abdômen</option>
+              </select>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- LISTA DE EXERCÍCIOS -->
+        <div class="modal-body p-0">
+          <ul class="list-group list-group-flush" id="lista-biblioteca">
+
+            <!-- ITEM DA LISTA -->
+            <li class="list-group-item p-0">
+              <div class="d-flex align-items-center gap-2 p-2">
+                <button type="button" class="btn btn-expandir d-flex align-items-center justify-content-between flex-grow-1 gap-2 text-start fw-semibold" data-bs-toggle="collapse" data-bs-target="#biblioteca-rosca-direta" aria-expanded="false" aria-controls="biblioteca-rosca-direta">
+                  <span>Rosca direta</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm fw-bold flex-shrink-0" aria-label="Adicionar Rosca direta">
+                  <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Adicionar
+                </button>
+              </div>
+
+              <div class="collapse" id="biblioteca-rosca-direta" data-bs-parent="#lista-biblioteca">
+                <div class="px-3 pb-3">
+                  <p class="small text-secondary mb-2">
+                    Exercício de isolamento para o bíceps, feito em pé com a barra, mantendo os cotovelos junto ao corpo durante todo o movimento.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge text-bg-secondary">Barra</span>
+                    <span class="badge text-bg-primary">Bíceps</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- ITEM DA LISTA -->
+            <li class="list-group-item p-0">
+              <div class="d-flex align-items-center gap-2 p-2">
+                <button type="button" class="btn btn-expandir d-flex align-items-center justify-content-between flex-grow-1 gap-2 text-start fw-semibold" data-bs-toggle="collapse" data-bs-target="#biblioteca-agachamento-livre" aria-expanded="false" aria-controls="biblioteca-agachamento-livre">
+                  <span>Agachamento livre</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm fw-bold flex-shrink-0" aria-label="Adicionar Agachamento livre">
+                  <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Adicionar
+                </button>
+              </div>
+
+              <div class="collapse" id="biblioteca-agachamento-livre" data-bs-parent="#lista-biblioteca">
+                <div class="px-3 pb-3">
+                  <p class="small text-secondary mb-2">
+                    Movimento composto que trabalha quadríceps, glúteos e posteriores. Mantenha a coluna neutra e desça até uma altura confortável.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge text-bg-secondary">Barra</span>
+                    <span class="badge text-bg-primary">Pernas</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- ITEM DA LISTA -->
+            <li class="list-group-item p-0">
+              <div class="d-flex align-items-center gap-2 p-2">
+                <button type="button" class="btn btn-expandir d-flex align-items-center justify-content-between flex-grow-1 gap-2 text-start fw-semibold" data-bs-toggle="collapse" data-bs-target="#biblioteca-flexao-de-braco" aria-expanded="false" aria-controls="biblioteca-flexao-de-braco">
+                  <span>Flexão de braço</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm fw-bold flex-shrink-0" aria-label="Adicionar Flexão de braço">
+                  <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Adicionar
+                </button>
+              </div>
+
+              <div class="collapse" id="biblioteca-flexao-de-braco" data-bs-parent="#lista-biblioteca">
+                <div class="px-3 pb-3">
+                  <p class="small text-secondary mb-2">
+                    Exercício com o peso do corpo para peito, ombros e tríceps. Mantenha o corpo alinhado da cabeça aos calcanhares.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge text-bg-secondary">Peso corporal</span>
+                    <span class="badge text-bg-primary">Peito</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

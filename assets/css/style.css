@@ -1,0 +1,466 @@
+/* ==========================================================
+   GRIP — style.css
+   Base: Bootstrap 5.3 (tema escuro) + Design System GRIP
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@700&display=swap');
+
+/* ----------------------------------------------------------
+   1. TOKENS
+   ---------------------------------------------------------- */
+:root,
+[data-bs-theme="dark"] {
+  /* Tokens do GRIP */
+  --grip-primary: #C3F400;
+  --grip-primary-dark: #ABD600;
+  --grip-on-primary: #111317;
+  --grip-background: #111317;
+  --grip-surface: #1E2023;
+  --grip-surface-elevated: #282A2E;
+  --grip-text: #E2E2E7;
+  --grip-text-muted: #C4C9AC;
+  --grip-outline: #8E9379;
+  --grip-outline-variant: #444933;
+  --grip-error: #FFB4AB;
+
+  --grip-glow: 0 0 0.75rem rgba(195, 244, 0, 0.25);
+
+  --grip-font-title: 'Plus Jakarta Sans', sans-serif;
+  --grip-font-body: 'Inter', sans-serif;
+  --grip-font-data: 'Space Grotesk', sans-serif;
+
+  /* Layout */
+  --largura-sidenav: 15rem;   /* 240px */
+
+  /* Variáveis do Bootstrap */
+  --bs-body-bg: #111317;
+  --bs-body-bg-rgb: 17, 19, 23;
+  --bs-body-color: #E2E2E7;
+  --bs-body-color-rgb: 226, 226, 231;
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-font-sans-serif: 'Inter', sans-serif;
+
+  --bs-secondary-color: #C4C9AC;
+  --bs-secondary-bg: #282A2E;
+  --bs-tertiary-bg: #1E2023;
+  --bs-tertiary-bg-rgb: 30, 32, 35;
+  --bs-border-color: #444933;
+
+  --bs-primary: #C3F400;
+  --bs-primary-rgb: 195, 244, 0;
+  --bs-primary-bg-subtle: rgba(195, 244, 0, 0.12);
+  --bs-primary-border-subtle: rgba(195, 244, 0, 0.3);
+  --bs-primary-text-emphasis: #C3F400;
+
+  --bs-secondary: #C8C6C5;
+  --bs-secondary-rgb: 200, 198, 197;
+
+  --bs-danger: #FFB4AB;
+  --bs-danger-rgb: 255, 180, 171;
+  --bs-danger-bg-subtle: rgba(255, 180, 171, 0.12);
+  --bs-danger-text-emphasis: #FFB4AB;
+
+  --bs-link-color: #C3F400;
+  --bs-link-color-rgb: 195, 244, 0;
+  --bs-link-hover-color: #ABD600;
+  --bs-link-hover-color-rgb: 171, 214, 0;
+
+  --bs-focus-ring-color: rgba(195, 244, 0, 0.25);
+
+  --bs-border-radius: 0.5rem;      /* 8px  */
+  --bs-border-radius-sm: 0.5rem;
+  --bs-border-radius-lg: 1rem;     /* 16px */
+  --bs-border-radius-xl: 1.5rem;   /* 24px */
+  --bs-border-radius-pill: 9999px;
+}
+
+/* ----------------------------------------------------------
+   2. BASE E TIPOGRAFIA
+   ---------------------------------------------------------- */
+body {
+  background-color: var(--grip-background);
+  color: var(--grip-text);
+  font-family: var(--grip-font-body);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--grip-font-title);
+  letter-spacing: -0.01em;
+}
+
+/* Título principal: tipografia fluida (28px a 40px) */
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  /* text-transform: uppercase;  <- opcional, caixa alta nos títulos principais */
+}
+
+/* Logo */
+header .fs-4,
+aside > .fs-4 {
+  font-family: var(--grip-font-title);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+hr {
+  color: var(--grip-outline-variant);
+  opacity: 1;
+}
+
+/* O HTML usa border-secondary para bordas discretas */
+.border-secondary {
+  border-color: var(--grip-outline-variant) !important;
+}
+
+/* Rótulos e dados técnicos (Space Grotesk) */
+.form-label,
+.tabela-series thead th {
+  font-family: var(--grip-font-data);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tabela-series tbody th,
+.tabela-series .form-control,
+.dado-numerico {
+  font-family: var(--grip-font-data);
+  font-weight: 700;
+}
+
+/* Número grande em destaque (ex.: cards da home) */
+.dado-destaque {
+  font-family: var(--grip-font-data);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--grip-primary);
+}
+
+/* ----------------------------------------------------------
+   3. LAYOUT
+   ---------------------------------------------------------- */
+main.container {
+  padding-left: 1.25rem !important;    /* 20px */
+  padding-right: 1.25rem !important;
+}
+
+/* Espaço entre seções: 40px */
+main section.mb-4 {
+  margin-bottom: 2.5rem !important;
+}
+
+/* Indicador vertical de 4px (itens ativos e títulos de seção) */
+.indicador-vertical {
+  border-left: 4px solid var(--grip-primary);
+  padding-left: 0.75rem;
+}
+
+/* Ações do formulário (flexbox próprio)
+   Celular: botões empilhados, com o primário em cima (column-reverse) */
+.acoes-form {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+}
+
+/* A partir de 576px: lado a lado, alinhados à direita */
+@media (min-width: 576px) {
+  .acoes-form {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* ----------------------------------------------------------
+   4. NAVEGAÇÃO (header, barra inferior e sidenav)
+   ---------------------------------------------------------- */
+.bg-dark {
+  background-color: rgba(17, 19, 23, 0.85) !important;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+nav.fixed-bottom {
+  border-top: 1px solid var(--grip-outline-variant);
+}
+
+.sidenav {
+  width: var(--largura-sidenav);
+  border-right: 1px solid var(--grip-outline-variant);
+}
+
+/* Item ativo: preenchido com a cor primária */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--grip-primary);
+  color: var(--grip-on-primary);
+  border-radius: 0.5rem;
+}
+
+/* Hover só nos itens inativos */
+.nav-link:not(.active):hover {
+  background-color: var(--grip-surface-elevated);
+  color: #ffffff !important;
+  border-radius: 0.5rem;
+}
+
+/* ----------------------------------------------------------
+   5. BOTÕES
+   ---------------------------------------------------------- */
+/* Área de toque mínima de 44px */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;      /* 44px */
+  border-radius: 0.75rem;   /* 12px */
+}
+
+/* Foco com glow */
+.btn:focus-visible {
+  box-shadow: var(--grip-glow);
+}
+
+/* Primário: Electric Lime com texto preto */
+.btn-primary {
+  --bs-btn-bg: #C3F400;
+  --bs-btn-border-color: #C3F400;
+  --bs-btn-color: #111317;
+  --bs-btn-hover-bg: #ABD600;
+  --bs-btn-hover-border-color: #ABD600;
+  --bs-btn-hover-color: #111317;
+  --bs-btn-active-bg: #ABD600;
+  --bs-btn-active-border-color: #ABD600;
+  --bs-btn-active-color: #111317;
+  --bs-btn-disabled-bg: #C3F400;
+  --bs-btn-disabled-border-color: #C3F400;
+  --bs-btn-disabled-color: #111317;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--grip-glow);
+}
+
+/* Secundário (ghost com borda lime) */
+.btn-outline-primary {
+  --bs-btn-color: #C3F400;
+  --bs-btn-border-color: #C3F400;
+  --bs-btn-hover-color: #C3F400;
+  --bs-btn-hover-bg: rgba(195, 244, 0, 0.12);
+  --bs-btn-hover-border-color: #C3F400;
+  --bs-btn-active-color: #C3F400;
+  --bs-btn-active-bg: rgba(195, 244, 0, 0.2);
+  --bs-btn-active-border-color: #C3F400;
+}
+
+/* Ação de baixa prioridade (Cancelar, Fechar): neutro */
+.btn-outline-secondary {
+  --bs-btn-color: #E2E2E7;
+  --bs-btn-border-color: #444933;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #282A2E;
+  --bs-btn-hover-border-color: #8E9379;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #282A2E;
+  --bs-btn-active-border-color: #8E9379;
+}
+
+/* Botões de ícone dos cards (excluir / abrir) */
+.btn-icone {
+  --bs-btn-color: var(--bs-secondary);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-border-color: transparent;
+  min-width: 2.75rem;       /* 44px */
+}
+
+.btn-icone-excluir {
+  --bs-btn-hover-color: var(--bs-danger);
+  --bs-btn-hover-bg: var(--bs-danger-bg-subtle);
+  --bs-btn-active-color: var(--bs-danger);
+  --bs-btn-active-bg: var(--bs-danger-bg-subtle);
+}
+
+.btn-icone-abrir {
+  --bs-btn-hover-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary-bg-subtle);
+  --bs-btn-active-color: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary-bg-subtle);
+}
+
+/* Botão de expandir/recolher (modais e lista de exercícios do treino) */
+.btn-expandir {
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-hover-bg: var(--grip-surface-elevated);
+  --bs-btn-active-bg: var(--grip-surface-elevated);
+}
+
+.btn-expandir .bi-chevron-down {
+  transition: transform 0.2s;
+}
+
+.btn-expandir[aria-expanded="true"] .bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* ----------------------------------------------------------
+   6. CARDS
+   ---------------------------------------------------------- */
+.card {
+  --bs-card-bg: transparent;
+  --bs-card-color: var(--grip-text);
+  --bs-card-border-color: var(--grip-outline-variant);
+  --bs-card-border-radius: 1rem;                          /* 16px */
+  --bs-card-inner-border-radius: calc(1rem - 1px);
+  background-image: linear-gradient(180deg, #23262A 0%, #1E2023 100%);
+}
+
+.card-img-destaque {
+  height: 10rem;            /* 160px */
+  object-fit: cover;
+}
+
+.card-img-exercicio {
+  height: 10rem;            /* 160px */
+  object-fit: cover;
+}
+
+/* ----------------------------------------------------------
+   7. FORMULÁRIOS
+   ---------------------------------------------------------- */
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: var(--grip-background);   /* mais escuro que o card */
+  border-color: var(--grip-outline-variant);
+  color: var(--grip-text);
+  border-radius: 0.75rem;                     /* 12px */
+}
+
+.form-control-sm {
+  border-radius: 0.5rem;
+}
+
+.input-group-text {
+  color: var(--grip-text-muted);
+}
+
+.form-control::placeholder {
+  color: var(--grip-outline);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--grip-background);
+  color: var(--grip-text);
+  border-color: var(--grip-primary);
+  box-shadow: var(--grip-glow);
+}
+
+/* ----------------------------------------------------------
+   8. CHIPS
+   ---------------------------------------------------------- */
+.badge {
+  font-family: var(--grip-font-body);
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 0;
+}
+
+/* Equipamento (neutro) e grupo muscular: fundo escuro, sem borda */
+.badge.text-bg-secondary {
+  background-color: var(--grip-surface-elevated) !important;
+  color: var(--grip-text-muted) !important;
+}
+
+.badge.text-bg-primary {
+  background-color: var(--grip-surface-elevated) !important;
+  color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   9. TABELA DE SÉRIES
+   ---------------------------------------------------------- */
+.tabela-series {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--grip-text);
+  --bs-table-border-color: var(--grip-outline-variant);
+}
+
+.tabela-col-serie {
+  width: 5.5rem;
+}
+
+.tabela-col-acao {
+  width: 3rem;
+}
+
+/* ----------------------------------------------------------
+   10. MODAIS E LISTAS
+   ---------------------------------------------------------- */
+.modal {
+  --bs-modal-bg: #282A2E;
+  --bs-modal-color: var(--grip-text);
+  --bs-modal-border-color: var(--grip-outline-variant);
+  --bs-modal-border-radius: 1rem;
+  --bs-modal-inner-border-radius: calc(1rem - 1px);
+  --bs-modal-header-border-color: var(--grip-outline-variant);
+  --bs-modal-footer-border-color: var(--grip-outline-variant);
+}
+
+.modal-backdrop {
+  --bs-backdrop-bg: #0c0e12;
+  --bs-backdrop-opacity: 0.6;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.list-group {
+  --bs-list-group-bg: transparent;
+  --bs-list-group-color: var(--grip-text);
+  --bs-list-group-border-color: var(--grip-outline-variant);
+}
+
+/* ----------------------------------------------------------
+   11. BARRA DE PROGRESSO (ainda não usada nas telas)
+   ---------------------------------------------------------- */
+.progress {
+  --bs-progress-height: 0.375rem;
+  --bs-progress-bg: var(--grip-surface-elevated);
+  --bs-progress-border-radius: 9999px;
+}
+
+.progress-bar {
+  background-image: linear-gradient(90deg, #ABD600, #C3F400);
+}
+
+/* ----------------------------------------------------------
+   12. BREAKPOINTS
+   ---------------------------------------------------------- */
+@media (min-width: 768px) {
+  body {
+    padding-left: var(--largura-sidenav);
+  }
+
+  main.container {
+    padding-left: 2.5rem !important;    /* 40px */
+    padding-right: 2.5rem !important;
+  }
+
+  .card-img-destaque {
+    height: 22rem;                      /* ~350px */
+  }
+
+  .card-img-exercicio {
+    height: 15.625rem;                  /* 250px */
+  }
+}
