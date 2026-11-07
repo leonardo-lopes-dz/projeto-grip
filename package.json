@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/leonardo-lopes-dz/projeto-grip/issues"
   },
-  "homepage": "https://github.com/leonardo-lopes-dz/projeto-grip#readme"
+  "homepage": "https://github.com/leonardo-lopes-dz/projeto-grip#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.2"
+  }
 }
