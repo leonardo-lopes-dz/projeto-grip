@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRIP</title>
+  <title>GRIP — Novo treino</title>
 
+  <!-- BOOTSTRAP (via npm) -->
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- BOOTSTRAP ICONS (via npm) -->
   <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
 
-  <!--MEU CSS-->
+  <!-- MEU CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -22,7 +25,7 @@
         GRIP
       </span>
 
-      <!-- DIREITA: Link em texto para Editar Perfil (sem link por enquanto) -->
+      <!-- DIREITA: Editar Perfil (sem link por enquanto) -->
       <div class="nav nav-pills">
         <a href="#" class="nav-link text-secondary fw-semibold py-1">
           <i class="bi bi-person-circle me-1" aria-hidden="true"></i>Perfil
@@ -84,7 +87,7 @@
   <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
   <main class="container py-5 px-3 px-md-5">
 
-    <!-- SEÇÃO DE SAUDAÇÃO (MOBILE FIRST) -->
+    <!-- SEÇÃO DE SAUDAÇÃO -->
     <section>
       <h1 class="fw-bold mb-1">Novo treino</h1>
       <p class="fs-6 text-secondary">Defina o título, a descrição e os exercícios do treino.</p>
@@ -96,7 +99,6 @@
 
       <!-- SEÇÃO DE DADOS DO TREINO -->
       <section class="mb-4">
-        <h2 class="visually-hidden">Dados do treino</h2>
 
         <!-- Título -->
         <div class="mb-3">
@@ -125,14 +127,14 @@
 
         <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
 
-          <!-- EXERCÍCIO DO TREINO (aberto) -->
+          <!-- EXERCÍCIO DO TREINO -->
           <li class="card border-secondary">
 
             <div class="d-flex align-items-center gap-2 p-2">
-              <button type="button" class="btn btn-expandir d-flex align-items-center justify-content-between flex-grow-1 gap-2 text-start" data-bs-toggle="collapse" data-bs-target="#treino-exercicio-1" aria-expanded="true" aria-controls="treino-exercicio-1">
+              <button type="button" class="btn btn-expandir d-flex align-items-center justify-content-between flex-grow-1 gap-2 text-start" data-bs-toggle="collapse" data-bs-target="#treino-exercicio-1" aria-expanded="false" aria-controls="treino-exercicio-1">
                 <span>
                   <span class="d-block fw-bold">Supino reto</span>
-                  <span class="d-block small text-secondary">3 séries</span>
+                  <span class="d-block small text-secondary">1 série</span>
                 </span>
                 <i class="bi bi-chevron-down" aria-hidden="true"></i>
               </button>
@@ -141,7 +143,7 @@
               </button>
             </div>
 
-            <div class="collapse show" id="treino-exercicio-1">
+            <div class="collapse" id="treino-exercicio-1">
               <div class="px-3 pb-3">
 
                 <table class="table table-sm align-middle tabela-series mb-2">
@@ -170,26 +172,6 @@
                         </button>
                       </td>
                     </tr>
-                    <tr>
-                      <th scope="row" class="text-nowrap">Série 2</th>
-                      <td><input type="number" class="form-control form-control-sm" value="8" min="1" inputmode="numeric" aria-label="Repetições da série 2 de Supino reto"></td>
-                      <td><input type="number" class="form-control form-control-sm" value="10" min="0" step="0.5" inputmode="decimal" aria-label="Carga em kg da série 2 de Supino reto"></td>
-                      <td class="text-end">
-                        <button type="button" class="btn btn-sm btn-icone btn-icone-excluir" aria-label="Excluir série 2 de Supino reto">
-                          <i class="bi bi-trash" aria-hidden="true"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="text-nowrap">Série 3</th>
-                      <td><input type="number" class="form-control form-control-sm" value="6" min="1" inputmode="numeric" aria-label="Repetições da série 3 de Supino reto"></td>
-                      <td><input type="number" class="form-control form-control-sm" value="12" min="0" step="0.5" inputmode="decimal" aria-label="Carga em kg da série 3 de Supino reto"></td>
-                      <td class="text-end">
-                        <button type="button" class="btn btn-sm btn-icone btn-icone-excluir" aria-label="Excluir série 3 de Supino reto">
-                          <i class="bi bi-trash" aria-hidden="true"></i>
-                        </button>
-                      </td>
-                    </tr>
                   </tbody>
                 </table>
 
@@ -202,7 +184,7 @@
 
           </li>
 
-          <!-- EXERCÍCIO DO TREINO (fechado) -->
+          <!-- EXERCÍCIO DO TREINO -->
           <li class="card border-secondary">
 
             <div class="d-flex align-items-center gap-2 p-2">
@@ -374,13 +356,13 @@
             <!-- ITEM DA LISTA -->
             <li class="list-group-item d-flex align-items-center justify-content-between gap-3 p-3">
               <div>
-                <span class="d-block fw-semibold">Desenvolvimento com halteres</span>
+                <span class="d-block fw-semibold">Rosca bíceps</span>
                 <div class="d-flex flex-wrap gap-1 mt-1">
                   <span class="badge text-bg-secondary">Halteres</span>
-                  <span class="badge text-bg-primary">Ombros</span>
+                  <span class="badge text-bg-primary">Bíceps</span>
                 </div>
               </div>
-              <button type="button" class="btn btn-primary btn-sm fw-bold flex-shrink-0" aria-label="Adicionar Desenvolvimento com halteres ao treino">
+              <button type="button" class="btn btn-primary btn-sm fw-bold flex-shrink-0" aria-label="Adicionar Rosca bíceps ao treino">
                 <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Adicionar
               </button>
             </li>
@@ -396,6 +378,7 @@
     </div>
   </div>
 
+  <!-- BOOTSTRAP JS (via npm) -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRIP</title>
+  <title>GRIP — Início</title>
 
+  <!-- BOOTSTRAP (via npm) -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- BOOTSTRAP ICONS (via npm) -->
   <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
 
-  <!--MEU CSS-->
+  <!-- MEU CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -22,7 +25,7 @@
         GRIP
       </span>
 
-      <!-- DIREITA: Link em texto para Editar Perfil (sem link por enquanto) -->
+      <!-- DIREITA: Editar Perfil (sem link por enquanto) -->
       <div class="nav nav-pills">
         <a href="#" class="nav-link text-secondary fw-semibold py-1">
           <i class="bi bi-person-circle me-1" aria-hidden="true"></i>Perfil
@@ -61,7 +64,7 @@
     <span class="text-white fs-4 fw-bold mb-4">GRIP</span>
 
     <nav class="nav nav-pills flex-column mb-auto">
-      <a href="index.html" class="nav-link fw-semibold mb-2 active">
+      <a href="index.html" class="nav-link active fw-semibold mb-2">
         <i class="bi bi-house-door-fill me-2" aria-hidden="true"></i>Início
       </a>
       <a href="pages/exercicios.html" class="nav-link text-secondary fw-semibold mb-2">
@@ -84,7 +87,7 @@
   <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
   <main class="container py-5 px-3 px-md-5">
 
-    <!-- SEÇÃO DE SAUDAÇÃO (MOBILE FIRST) -->
+    <!-- SEÇÃO DE SAUDAÇÃO -->
     <section class="mb-4">
       <h1 class="fw-bold mb-1">Pronto para treinar?</h1>
       <p class="fs-6 text-secondary">Bem-vindo de volta.</p>
@@ -117,6 +120,7 @@
         </div>
       </div>
 
+      <!-- BOTÃO: Novo treino -->
       <div class="col-12 col-md-4">
         <a href="pages/treino.html" class="btn btn-primary btn-lg h-100 d-flex align-items-center justify-content-center fw-bold py-4">
           + Novo Treino
@@ -125,7 +129,7 @@
 
     </section>
 
-    <!-- SEÇÃO CARD EM DESTAQUE (LARGURA TOTAL) -->
+    <!-- SEÇÃO CARD EM DESTAQUE -->
     <!-- DEVE MOSTRAR UM TREINO ALEATÓRIO, CASO HAJA MAIS DE UM CADASTRADO -->
     <section>
       <h2 class="fw-semibold mb-4 indicador-vertical">Treino de hoje</h2>
@@ -168,7 +172,7 @@
 
   </main>
 
+  <!-- BOOTSTRAP JS (via npm) -->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
