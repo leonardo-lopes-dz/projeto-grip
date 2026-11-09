@@ -7,71 +7,97 @@
 
 /* ----------------------------------------------------------
    1. TOKENS
+   Todo valor de cor, fonte, raio e medida repetida do projeto
+   nasce aqui. O resto do arquivo só usa var(--grip-*).
    ---------------------------------------------------------- */
 :root,
 [data-bs-theme="dark"] {
-  /* Tokens do GRIP */
+  /* Cores do GRIP */
   --grip-primary: #C3F400;
   --grip-primary-dark: #ABD600;
   --grip-on-primary: #111317;
   --grip-background: #111317;
   --grip-surface: #1E2023;
   --grip-surface-elevated: #282A2E;
+  --grip-card-top: #23262A;
   --grip-text: #E2E2E7;
   --grip-text-muted: #C4C9AC;
+  --grip-secondary: #C8C6C5;
   --grip-outline: #8E9379;
   --grip-outline-variant: #444933;
   --grip-error: #FFB4AB;
+  --grip-backdrop: #0C0E12;
 
-  --grip-glow: 0 0 0.75rem rgba(195, 244, 0, 0.25);
+  /* Versões RGB (para usar com transparência: rgba(var(--x-rgb), 0.12)) */
+  --grip-primary-rgb: 195, 244, 0;
+  --grip-background-rgb: 17, 19, 23;
+  --grip-surface-rgb: 30, 32, 35;
+  --grip-text-rgb: 226, 226, 231;
+  --grip-secondary-rgb: 200, 198, 197;
+  --grip-error-rgb: 255, 180, 171;
 
+  --grip-glow: 0 0 0.75rem rgba(var(--grip-primary-rgb), 0.25);
+
+  /* Tipografia */
   --grip-font-title: 'Plus Jakarta Sans', sans-serif;
   --grip-font-body: 'Inter', sans-serif;
   --grip-font-data: 'Space Grotesk', sans-serif;
 
-  /* Layout */
-  --largura-sidenav: 15rem;   /* 240px */
+  /* Raios */
+  --grip-radius-sm: 0.5rem;     /* 8px  */
+  --grip-radius-md: 0.75rem;    /* 12px */
+  --grip-radius-lg: 1rem;       /* 16px */
+  --grip-radius-xl: 1.5rem;     /* 24px */
+  --grip-radius-pill: 9999px;
 
-  /* Variáveis do Bootstrap */
-  --bs-body-bg: #111317;
-  --bs-body-bg-rgb: 17, 19, 23;
-  --bs-body-color: #E2E2E7;
-  --bs-body-color-rgb: 226, 226, 231;
-  --bs-body-font-family: 'Inter', sans-serif;
-  --bs-font-sans-serif: 'Inter', sans-serif;
+  /* Medidas de layout */
+  --largura-sidenav: 15rem;     /* 240px */
+  --grip-touch: 2.75rem;        /* área de toque mínima: 44px */
+  --grip-space-section: 2.5rem; /* espaço entre seções: 40px */
+  --grip-main-x-mobile: 1.25rem;  /* 20px */
+  --grip-main-x-desktop: 2.5rem;  /* 40px */
+  --altura-nav-inferior: 4.5rem;  /* reserva abaixo do conteúdo no celular */
 
-  --bs-secondary-color: #C4C9AC;
-  --bs-secondary-bg: #282A2E;
-  --bs-tertiary-bg: #1E2023;
-  --bs-tertiary-bg-rgb: 30, 32, 35;
-  --bs-border-color: #444933;
+  /* Variáveis do Bootstrap, apontando para os tokens do GRIP */
+  --bs-body-bg: var(--grip-background);
+  --bs-body-bg-rgb: var(--grip-background-rgb);
+  --bs-body-color: var(--grip-text);
+  --bs-body-color-rgb: var(--grip-text-rgb);
+  --bs-body-font-family: var(--grip-font-body);
+  --bs-font-sans-serif: var(--grip-font-body);
 
-  --bs-primary: #C3F400;
-  --bs-primary-rgb: 195, 244, 0;
-  --bs-primary-bg-subtle: rgba(195, 244, 0, 0.12);
-  --bs-primary-border-subtle: rgba(195, 244, 0, 0.3);
-  --bs-primary-text-emphasis: #C3F400;
+  --bs-secondary-color: var(--grip-text-muted);
+  --bs-secondary-bg: var(--grip-surface-elevated);
+  --bs-tertiary-bg: var(--grip-surface);
+  --bs-tertiary-bg-rgb: var(--grip-surface-rgb);
+  --bs-border-color: var(--grip-outline-variant);
 
-  --bs-secondary: #C8C6C5;
-  --bs-secondary-rgb: 200, 198, 197;
+  --bs-primary: var(--grip-primary);
+  --bs-primary-rgb: var(--grip-primary-rgb);
+  --bs-primary-bg-subtle: rgba(var(--grip-primary-rgb), 0.12);
+  --bs-primary-border-subtle: rgba(var(--grip-primary-rgb), 0.3);
+  --bs-primary-text-emphasis: var(--grip-primary);
 
-  --bs-danger: #FFB4AB;
-  --bs-danger-rgb: 255, 180, 171;
-  --bs-danger-bg-subtle: rgba(255, 180, 171, 0.12);
-  --bs-danger-text-emphasis: #FFB4AB;
+  --bs-secondary: var(--grip-secondary);
+  --bs-secondary-rgb: var(--grip-secondary-rgb);
 
-  --bs-link-color: #C3F400;
-  --bs-link-color-rgb: 195, 244, 0;
-  --bs-link-hover-color: #ABD600;
+  --bs-danger: var(--grip-error);
+  --bs-danger-rgb: var(--grip-error-rgb);
+  --bs-danger-bg-subtle: rgba(var(--grip-error-rgb), 0.12);
+  --bs-danger-text-emphasis: var(--grip-error);
+
+  --bs-link-color: var(--grip-primary);
+  --bs-link-color-rgb: var(--grip-primary-rgb);
+  --bs-link-hover-color: var(--grip-primary-dark);
   --bs-link-hover-color-rgb: 171, 214, 0;
 
-  --bs-focus-ring-color: rgba(195, 244, 0, 0.25);
+  --bs-focus-ring-color: rgba(var(--grip-primary-rgb), 0.25);
 
-  --bs-border-radius: 0.5rem;      /* 8px  */
-  --bs-border-radius-sm: 0.5rem;
-  --bs-border-radius-lg: 1rem;     /* 16px */
-  --bs-border-radius-xl: 1.5rem;   /* 24px */
-  --bs-border-radius-pill: 9999px;
+  --bs-border-radius: var(--grip-radius-sm);
+  --bs-border-radius-sm: var(--grip-radius-sm);
+  --bs-border-radius-lg: var(--grip-radius-lg);
+  --bs-border-radius-xl: var(--grip-radius-xl);
+  --bs-border-radius-pill: var(--grip-radius-pill);
 }
 
 /* ----------------------------------------------------------
@@ -81,6 +107,8 @@ body {
   background-color: var(--grip-background);
   color: var(--grip-text);
   font-family: var(--grip-font-body);
+  /* Celular: reserva o espaço da barra inferior fixa */
+  padding-bottom: var(--altura-nav-inferior);
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -146,14 +174,16 @@ hr {
 /* ----------------------------------------------------------
    3. LAYOUT
    ---------------------------------------------------------- */
+/* Mobile first: 20px nas laterais. Sem !important: o seletor
+   main.container é mais específico que .container do Bootstrap. */
 main.container {
-  padding-left: 1.25rem !important;    /* 20px */
-  padding-right: 1.25rem !important;
+  padding-left: var(--grip-main-x-mobile);
+  padding-right: var(--grip-main-x-mobile);
 }
 
 /* Espaço entre seções: 40px */
 main section.mb-4 {
-  margin-bottom: 2.5rem !important;
+  margin-bottom: var(--grip-space-section) !important;
 }
 
 /* Indicador vertical de 4px (itens ativos e títulos de seção) */
@@ -182,7 +212,7 @@ main section.mb-4 {
    4. NAVEGAÇÃO (header, barra inferior e sidenav)
    ---------------------------------------------------------- */
 .bg-dark {
-  background-color: rgba(17, 19, 23, 0.85) !important;
+  background-color: rgba(var(--grip-background-rgb), 0.85) !important;
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
@@ -201,14 +231,14 @@ nav.fixed-bottom {
 .nav-pills .show > .nav-link {
   background-color: var(--grip-primary);
   color: var(--grip-on-primary);
-  border-radius: 0.5rem;
+  border-radius: var(--grip-radius-sm);
 }
 
 /* Hover só nos itens inativos */
 .nav-link:not(.active):hover {
   background-color: var(--grip-surface-elevated);
   color: #ffffff !important;
-  border-radius: 0.5rem;
+  border-radius: var(--grip-radius-sm);
 }
 
 /* ----------------------------------------------------------
@@ -219,8 +249,8 @@ nav.fixed-bottom {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.75rem;      /* 44px */
-  border-radius: 0.75rem;   /* 12px */
+  min-height: var(--grip-touch);
+  border-radius: var(--grip-radius-md);
 }
 
 /* Foco com glow */
@@ -228,20 +258,20 @@ nav.fixed-bottom {
   box-shadow: var(--grip-glow);
 }
 
-/* Primário: Electric Lime com texto preto */
+/* Primário: Electric Lime com texto escuro */
 .btn-primary {
-  --bs-btn-bg: #C3F400;
-  --bs-btn-border-color: #C3F400;
-  --bs-btn-color: #111317;
-  --bs-btn-hover-bg: #ABD600;
-  --bs-btn-hover-border-color: #ABD600;
-  --bs-btn-hover-color: #111317;
-  --bs-btn-active-bg: #ABD600;
-  --bs-btn-active-border-color: #ABD600;
-  --bs-btn-active-color: #111317;
-  --bs-btn-disabled-bg: #C3F400;
-  --bs-btn-disabled-border-color: #C3F400;
-  --bs-btn-disabled-color: #111317;
+  --bs-btn-bg: var(--grip-primary);
+  --bs-btn-border-color: var(--grip-primary);
+  --bs-btn-color: var(--grip-on-primary);
+  --bs-btn-hover-bg: var(--grip-primary-dark);
+  --bs-btn-hover-border-color: var(--grip-primary-dark);
+  --bs-btn-hover-color: var(--grip-on-primary);
+  --bs-btn-active-bg: var(--grip-primary-dark);
+  --bs-btn-active-border-color: var(--grip-primary-dark);
+  --bs-btn-active-color: var(--grip-on-primary);
+  --bs-btn-disabled-bg: var(--grip-primary);
+  --bs-btn-disabled-border-color: var(--grip-primary);
+  --bs-btn-disabled-color: var(--grip-on-primary);
 }
 
 .btn-primary:hover {
@@ -250,26 +280,26 @@ nav.fixed-bottom {
 
 /* Secundário (ghost com borda lime) */
 .btn-outline-primary {
-  --bs-btn-color: #C3F400;
-  --bs-btn-border-color: #C3F400;
-  --bs-btn-hover-color: #C3F400;
-  --bs-btn-hover-bg: rgba(195, 244, 0, 0.12);
-  --bs-btn-hover-border-color: #C3F400;
-  --bs-btn-active-color: #C3F400;
-  --bs-btn-active-bg: rgba(195, 244, 0, 0.2);
-  --bs-btn-active-border-color: #C3F400;
+  --bs-btn-color: var(--grip-primary);
+  --bs-btn-border-color: var(--grip-primary);
+  --bs-btn-hover-color: var(--grip-primary);
+  --bs-btn-hover-bg: rgba(var(--grip-primary-rgb), 0.12);
+  --bs-btn-hover-border-color: var(--grip-primary);
+  --bs-btn-active-color: var(--grip-primary);
+  --bs-btn-active-bg: rgba(var(--grip-primary-rgb), 0.2);
+  --bs-btn-active-border-color: var(--grip-primary);
 }
 
 /* Ação de baixa prioridade (Cancelar, Fechar): neutro */
 .btn-outline-secondary {
-  --bs-btn-color: #E2E2E7;
-  --bs-btn-border-color: #444933;
+  --bs-btn-color: var(--grip-text);
+  --bs-btn-border-color: var(--grip-outline-variant);
   --bs-btn-hover-color: #ffffff;
-  --bs-btn-hover-bg: #282A2E;
-  --bs-btn-hover-border-color: #8E9379;
+  --bs-btn-hover-bg: var(--grip-surface-elevated);
+  --bs-btn-hover-border-color: var(--grip-outline);
   --bs-btn-active-color: #ffffff;
-  --bs-btn-active-bg: #282A2E;
-  --bs-btn-active-border-color: #8E9379;
+  --bs-btn-active-bg: var(--grip-surface-elevated);
+  --bs-btn-active-border-color: var(--grip-outline);
 }
 
 /* Botões de ícone dos cards (excluir / abrir) */
@@ -278,7 +308,7 @@ nav.fixed-bottom {
   --bs-btn-border-color: transparent;
   --bs-btn-hover-border-color: transparent;
   --bs-btn-active-border-color: transparent;
-  min-width: 2.75rem;       /* 44px */
+  min-width: var(--grip-touch);
 }
 
 .btn-icone-excluir {
@@ -319,9 +349,9 @@ nav.fixed-bottom {
   --bs-card-bg: transparent;
   --bs-card-color: var(--grip-text);
   --bs-card-border-color: var(--grip-outline-variant);
-  --bs-card-border-radius: 1rem;                          /* 16px */
-  --bs-card-inner-border-radius: calc(1rem - 1px);
-  background-image: linear-gradient(180deg, #23262A 0%, #1E2023 100%);
+  --bs-card-border-radius: var(--grip-radius-lg);
+  --bs-card-inner-border-radius: calc(var(--grip-radius-lg) - 1px);
+  background-image: linear-gradient(180deg, var(--grip-card-top) 0%, var(--grip-surface) 100%);
 }
 
 .card-img-destaque {
@@ -343,11 +373,11 @@ nav.fixed-bottom {
   background-color: var(--grip-background);   /* mais escuro que o card */
   border-color: var(--grip-outline-variant);
   color: var(--grip-text);
-  border-radius: 0.75rem;                     /* 12px */
+  border-radius: var(--grip-radius-md);
 }
 
 .form-control-sm {
-  border-radius: 0.5rem;
+  border-radius: var(--grip-radius-sm);
 }
 
 .input-group-text {
@@ -372,7 +402,7 @@ nav.fixed-bottom {
 .badge {
   font-family: var(--grip-font-body);
   font-weight: 600;
-  border-radius: 9999px;
+  border-radius: var(--grip-radius-pill);
   border: 0;
 }
 
@@ -408,17 +438,17 @@ nav.fixed-bottom {
    10. MODAIS E LISTAS
    ---------------------------------------------------------- */
 .modal {
-  --bs-modal-bg: #282A2E;
+  --bs-modal-bg: var(--grip-surface-elevated);
   --bs-modal-color: var(--grip-text);
   --bs-modal-border-color: var(--grip-outline-variant);
-  --bs-modal-border-radius: 1rem;
-  --bs-modal-inner-border-radius: calc(1rem - 1px);
+  --bs-modal-border-radius: var(--grip-radius-lg);
+  --bs-modal-inner-border-radius: calc(var(--grip-radius-lg) - 1px);
   --bs-modal-header-border-color: var(--grip-outline-variant);
   --bs-modal-footer-border-color: var(--grip-outline-variant);
 }
 
 .modal-backdrop {
-  --bs-backdrop-bg: #0c0e12;
+  --bs-backdrop-bg: var(--grip-backdrop);
   --bs-backdrop-opacity: 0.6;
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
@@ -436,24 +466,26 @@ nav.fixed-bottom {
 .progress {
   --bs-progress-height: 0.375rem;
   --bs-progress-bg: var(--grip-surface-elevated);
-  --bs-progress-border-radius: 9999px;
+  --bs-progress-border-radius: var(--grip-radius-pill);
 }
 
 .progress-bar {
-  background-image: linear-gradient(90deg, #ABD600, #C3F400);
+  background-image: linear-gradient(90deg, var(--grip-primary-dark), var(--grip-primary));
 }
 
 /* ----------------------------------------------------------
    12. BREAKPOINTS
    ---------------------------------------------------------- */
 @media (min-width: 768px) {
+  /* No desktop a barra inferior some e entra a sidenav */
   body {
+    padding-bottom: 0;
     padding-left: var(--largura-sidenav);
   }
 
   main.container {
-    padding-left: 2.5rem !important;    /* 40px */
-    padding-right: 2.5rem !important;
+    padding-left: var(--grip-main-x-desktop);
+    padding-right: var(--grip-main-x-desktop);
   }
 
   .card-img-destaque {
